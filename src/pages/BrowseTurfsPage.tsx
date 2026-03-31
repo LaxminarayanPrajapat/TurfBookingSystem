@@ -1,5 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { useTurfStore } from '../store/turfStore';
 import { useAuthStore } from '../store/authStore';
 import type { Turf } from '../types';
@@ -130,7 +131,7 @@ const TurfCard = ({
 // ── Main page ───────────────────────────────────────────────────────────────
 const BrowseTurfsPage = () => {
     const navigate = useNavigate();
-    const { turfs, loading, fetchAllTurfs } = useTurfStore();
+    const { turfs, loading, fetchAllTurfs, error } = useTurfStore();
     const { isAuthenticated } = useAuthStore();
 
     // Search & filter state
@@ -146,6 +147,10 @@ const BrowseTurfsPage = () => {
     useEffect(() => {
         fetchAllTurfs();
     }, [fetchAllTurfs]);
+
+    useEffect(() => {
+        if (error) toast.error(error);
+    }, [error]);
 
     // Close dropdown on outside click
     useEffect(() => {

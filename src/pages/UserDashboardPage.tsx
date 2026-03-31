@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { useAuthStore } from '../store/authStore';
 import { useBookingStore } from '../store/bookingStore';
 import { useTurfStore } from '../store/turfStore';
@@ -88,8 +89,8 @@ function TurfCard({ turf }: { turf: Turf }) {
 
 export default function UserDashboardPage() {
     const { user } = useAuthStore();
-    const { bookings, fetchUserBookings, loading: bookingsLoading } = useBookingStore();
-    const { turfs, fetchAllTurfs, loading: turfsLoading } = useTurfStore();
+    const { bookings, fetchUserBookings, loading: bookingsLoading, error: bookingsError } = useBookingStore();
+    const { turfs, fetchAllTurfs, loading: turfsLoading, error: turfsError } = useTurfStore();
     const navigate = useNavigate();
     const [activeSection, setActiveSection] = useState<SidebarSection>('dashboard');
 
@@ -97,6 +98,14 @@ export default function UserDashboardPage() {
         if (user?.id) fetchUserBookings(user.id);
         fetchAllTurfs();
     }, [user?.id]);
+
+    useEffect(() => {
+        if (bookingsError) toast.error(bookingsError);
+    }, [bookingsError]);
+
+    useEffect(() => {
+        if (turfsError) toast.error(turfsError);
+    }, [turfsError]);
 
     const now = new Date();
     const upcomingBookings: Booking[] = bookings.filter(

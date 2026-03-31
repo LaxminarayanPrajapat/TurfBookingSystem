@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { useTurfStore } from '../store/turfStore';
 import { useAuthStore } from '../store/authStore';
 import BookingSidebar from '../components/BookingSidebar';
@@ -22,7 +23,7 @@ const TURF_RULES = [
 const TurfDetailsPage = () => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
-    const { selectedTurf, loading, fetchTurfById } = useTurfStore();
+    const { selectedTurf, loading, fetchTurfById, error } = useTurfStore();
     const { isAuthenticated } = useAuthStore();
 
     useEffect(() => {
@@ -30,6 +31,10 @@ const TurfDetailsPage = () => {
             fetchTurfById(id);
         }
     }, [id, fetchTurfById]);
+
+    useEffect(() => {
+        if (error) toast.error(error);
+    }, [error]);
 
     const handleProceedToBooking = () => {
         if (isAuthenticated) {

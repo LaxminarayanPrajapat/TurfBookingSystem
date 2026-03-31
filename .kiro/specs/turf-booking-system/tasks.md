@@ -82,10 +82,10 @@
   - [x] 15.2 Implement Single Day / Multi-Day conditional date picker using CustomCalendar
   - [x] 15.3 Integrate TimeSlotGrid and BookingSidebar; implement form validation and createBooking call with tournamentDetails in specialRequests
 
-- [ ] 16. Firebase Service Enhancements
-  - [ ] 16.1 Add `fetchMyTurfs(ownerId)` to TurfStore and `fetchTurfBookings(turfId)` to BookingStore if not already present
-  - [ ] 16.2 Add `getAllUsers()` and `updateUserSuspension(uid, suspended)` to AuthService for admin operations
-  - [ ] 16.3 Ensure all service errors are caught in stores and set the `error` field, triggering toast notifications in pages
+- [x] 16. Firebase Service Enhancements
+  - [x] 16.1 Add `fetchMyTurfs(ownerId)` to TurfStore and `fetchTurfBookings(turfId)` to BookingStore if not already present
+  - [x] 16.2 Add `getAllUsers()` and `updateUserSuspension(uid, suspended)` to AuthService for admin operations
+  - [x] 16.3 Ensure all service errors are caught in stores and set the `error` field, triggering toast notifications in pages
 
 - [ ] 17. Responsive Design Polish
   - [ ] 17.1 Verify and fix mobile bottom navigation bars on BrowseTurfsPage and UserDashboardPage (visible below 768px)

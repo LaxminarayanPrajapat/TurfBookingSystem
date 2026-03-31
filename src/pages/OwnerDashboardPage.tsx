@@ -111,7 +111,7 @@ interface PriceState {
 export default function OwnerDashboardPage() {
     const navigate = useNavigate();
     const { user } = useAuthStore();
-    const { myTurfs, loading: turfsLoading, fetchMyTurfs, updateTurf } = useTurfStore();
+    const { myTurfs, loading: turfsLoading, fetchMyTurfs, updateTurf, error: turfsError } = useTurfStore();
     const { updateBooking } = useBookingStore();
 
     const [allBookings, setAllBookings] = useState<Booking[]>([]);
@@ -124,6 +124,10 @@ export default function OwnerDashboardPage() {
     }, [user?.id]);
 
     useEffect(() => {
+        if (turfsError) toast.error(turfsError);
+    }, [turfsError]);
+
+    useEffect(() => {
         if (myTurfs.length === 0) return;
         let cancelled = false;
         const loadAll = async () => {
@@ -132,7 +136,9 @@ export default function OwnerDashboardPage() {
                 const { bookingService } = await import('../services/bookingService');
                 const allResults = await Promise.all(myTurfs.map((t) => bookingService.getTurfBookings(t.id)));
                 if (!cancelled) setAllBookings(allResults.flat());
-            } catch { /* silently handled */ }
+            } catch (err: any) {
+                if (!cancelled) toast.error(err?.message || 'Failed to load bookings');
+            }
             finally { if (!cancelled) setBookingsLoading(false); }
         };
         loadAll();
@@ -172,7 +178,9 @@ export default function OwnerDashboardPage() {
             const { bookingService } = await import('../services/bookingService');
             const allResults = await Promise.all(myTurfs.map((t) => bookingService.getTurfBookings(t.id)));
             setAllBookings(allResults.flat());
-        } catch { /* ignore */ }
+        } catch (err: any) {
+            toast.error(err?.message || 'Failed to refresh bookings');
+        }
     };
 
     const handleAccept = async (booking: Booking) => {
