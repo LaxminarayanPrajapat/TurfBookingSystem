@@ -32,11 +32,11 @@
   - [x] 6.3 Add "Top Rated Arenas" section with 4 turf cards fetched from TurfStore, each linking to `/turf/{id}`
   - [x] 6.4 Add testimonials section (3 review cards), CTA section (ActionOrange background, Browse link), and footer
 
-- [ ] 7. Browse Turfs Page
-  - [ ] 7.1 Redesign `src/pages/BrowseTurfsPage.tsx` — fetch turfs from TurfStore on mount, 3-column responsive grid
-  - [ ] 7.2 Add filter chips (Location, Price Range, Availability, Pitch Type, Sort By) with client-side filtering logic
-  - [ ] 7.3 Add featured turf card (wide single-column layout above grid)
-  - [ ] 7.4 Add mobile bottom navigation bar (visible below 768px)
+- [x] 7. Browse Turfs Page
+  - [x] 7.1 Redesign `src/pages/BrowseTurfsPage.tsx` — fetch turfs from TurfStore on mount, 3-column responsive grid
+  - [x] 7.2 Add filter chips (Location, Price Range, Availability, Pitch Type, Sort By) with client-side filtering logic
+  - [x] 7.3 Add featured turf card (wide single-column layout above grid)
+  - [x] 7.4 Add mobile bottom navigation bar (visible below 768px)
 
 - [ ] 8. Turf Details Page
   - [ ] 8.1 Redesign `src/pages/TurfDetailsPage.tsx` — hero image with gradient overlay and turf name, fetch turf from TurfStore
