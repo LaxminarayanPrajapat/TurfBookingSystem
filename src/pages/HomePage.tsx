@@ -1,8 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiMapPin, FiClock, FiStar } from 'react-icons/fi';
 
-const HomePage: React.FC = () => {
+const HomePage = () => {
     const features = [
         {
             icon: <FiMapPin className="text-2xl" />,

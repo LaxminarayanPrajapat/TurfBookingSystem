@@ -60,14 +60,23 @@ export const useAuthStore = create<AuthStore>((set) => ({
     },
 
     initializeAuth: () => {
-        onAuthStateChanged(auth, async (firebaseUser) => {
-            if (firebaseUser) {
-                const userData = await authService.getUserData(firebaseUser.uid);
-                set({ user: userData, isAuthenticated: true, loading: false });
-            } else {
-                set({ user: null, isAuthenticated: false, loading: false });
-            }
-        });
+        try {
+            onAuthStateChanged(auth, async (firebaseUser) => {
+                if (firebaseUser) {
+                    try {
+                        const userData = await authService.getUserData(firebaseUser.uid);
+                        set({ user: userData, isAuthenticated: true, loading: false });
+                    } catch (error) {
+                        set({ loading: false });
+                    }
+                } else {
+                    set({ user: null, isAuthenticated: false, loading: false });
+                }
+            });
+        } catch (error) {
+            console.warn('Auth initialization warning:', error);
+            set({ loading: false });
+        }
     },
 
     setUser: (user) => {

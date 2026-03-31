@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import { FiMenu, FiX, FiLogOut, FiUser } from 'react-icons/fi';
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
     const { isAuthenticated, user, logout } = useAuthStore();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navigate = useNavigate();

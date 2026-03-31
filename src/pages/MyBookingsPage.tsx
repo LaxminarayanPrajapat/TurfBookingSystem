@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useAuthStore } from '../store/authStore';
 import { useBookingStore } from '../store/bookingStore';
 import { formatDate, formatTime } from '../utils/helpers';
 import { FiCalendar, FiClock, FiDollarSign, FiTrash2 } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 
-const MyBookingsPage: React.FC = () => {
+const MyBookingsPage = () => {
     const { user } = useAuthStore();
     const { bookings, loading, fetchUserBookings, cancelBooking } = useBookingStore();
 

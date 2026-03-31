@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTurfStore } from '../store/turfStore';
 import { FiMapPin, FiStar, FiUsers, FiCheck } from 'react-icons/fi';
 
-const TurfDetailsPage: React.FC = () => {
+const TurfDetailsPage = () => {
     const { id } = useParams<{ id: string }>();
     const { selectedTurf, loading, fetchTurfById } = useTurfStore();
 

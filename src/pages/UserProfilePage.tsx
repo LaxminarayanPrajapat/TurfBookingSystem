@@ -1,10 +1,10 @@
-import React from 'react';
+
 import { useAuthStore } from '../store/authStore';
 import { FiUser, FiMail, FiPhone, FiLogOut } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-const UserProfilePage: React.FC = () => {
+const UserProfilePage = () => {
     const { user, logout } = useAuthStore();
     const navigate = useNavigate();
 

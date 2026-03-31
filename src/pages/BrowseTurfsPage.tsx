@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTurfStore } from '../store/turfStore';
 import { FiMapPin, FiStar, FiUsers, FiClock, FiSearch } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
-const BrowseTurfsPage: React.FC = () => {
+const BrowseTurfsPage = () => {
     const { turfs, loading, fetchAllTurfs } = useTurfStore();
     const [search, setSearch] = useState('');
     const [priceFilter, setPriceFilter] = useState({ min: '0', max: '500' });

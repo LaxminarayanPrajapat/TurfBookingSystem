@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useAuthStore } from '../store/authStore';
 import { useTurfStore } from '../store/turfStore';
 import { FiPlus, FiEdit2, FiTrash2, FiTrendingUp } from 'react-icons/fi';
 
-const OwnerDashboardPage: React.FC = () => {
+const OwnerDashboardPage = () => {
     const { user } = useAuthStore();
     const { myTurfs, loading, fetchMyTurfs, deleteTurf } = useTurfStore();
 

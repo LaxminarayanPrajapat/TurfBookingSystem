@@ -106,7 +106,7 @@ const BookingPage = () => {
                             <h3 className="text-lg font-bold mb-4">Select Date</h3>
                             <Calendar
                                 value={date}
-                                onChange={(value) => setDate(value as Date)}
+                                onChange={(value: any) => setDate(value as Date)} 
                                 minDate={new Date()}
                                 className="w-full"
                             />

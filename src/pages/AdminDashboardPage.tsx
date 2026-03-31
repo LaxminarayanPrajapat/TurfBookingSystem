@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { FiUsers, FiCalendar, FiTrendingUp, FiSettings } from 'react-icons/fi';
 
-const AdminDashboardPage: React.FC = () => {
+const AdminDashboardPage = () => {
     const stats = [
         { icon: <FiUsers className="text-2xl" />, title: 'Total Users', value: '1,234' },
         { icon: <FiCalendar className="text-2xl" />, title: 'Total Turfs', value: '456' },

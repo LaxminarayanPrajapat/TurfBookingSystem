@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import { FiMail, FiLock, FiUser, FiPhone, FiEye, FiEyeOff } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 import { validateEmail, validatePhoneNumber } from '../utils/helpers';
 
-const RegisterPage: React.FC = () => {
+const RegisterPage = () => {
     const [displayName, setDisplayName] = useState('');
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
