@@ -77,10 +77,10 @@
   - [x] 14.2 Add Owner Management table with real-time search filter, Approve/Suspend/Reactivate actions (update Firestore users/{uid}.suspended)
   - [x] 14.3 Add Recent Platform Activity feed (10 most recent bookings) and Platform Health card
 
-- [ ] 15. Tournament Booking Page
-  - [ ] 15.1 Create `src/pages/TournamentBookingPage.tsx` — tournament details form (Tournament Name, Team Count, Format toggle, Special Requirements)
-  - [ ] 15.2 Implement Single Day / Multi-Day conditional date picker using CustomCalendar
-  - [ ] 15.3 Integrate TimeSlotGrid and BookingSidebar; implement form validation and createBooking call with tournamentDetails in specialRequests
+- [x] 15. Tournament Booking Page
+  - [x] 15.1 Create `src/pages/TournamentBookingPage.tsx` — tournament details form (Tournament Name, Team Count, Format toggle, Special Requirements)
+  - [x] 15.2 Implement Single Day / Multi-Day conditional date picker using CustomCalendar
+  - [x] 15.3 Integrate TimeSlotGrid and BookingSidebar; implement form validation and createBooking call with tournamentDetails in specialRequests
 
 - [ ] 16. Firebase Service Enhancements
   - [ ] 16.1 Add `fetchMyTurfs(ownerId)` to TurfStore and `fetchTurfBookings(turfId)` to BookingStore if not already present
