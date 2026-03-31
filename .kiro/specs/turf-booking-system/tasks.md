@@ -38,11 +38,11 @@
   - [x] 7.3 Add featured turf card (wide single-column layout above grid)
   - [x] 7.4 Add mobile bottom navigation bar (visible below 768px)
 
-- [ ] 8. Turf Details Page
-  - [ ] 8.1 Redesign `src/pages/TurfDetailsPage.tsx` — hero image with gradient overlay and turf name, fetch turf from TurfStore
-  - [ ] 8.2 Add amenities section (4 icon cards, surface-low background)
-  - [ ] 8.3 Add sticky right sidebar using BookingSidebar component with "Proceed to Booking" CTA
-  - [ ] 8.4 Add Turf Rules section and "Turf not found" error state
+- [x] 8. Turf Details Page
+  - [x] 8.1 Redesign `src/pages/TurfDetailsPage.tsx` — hero image with gradient overlay and turf name, fetch turf from TurfStore
+  - [x] 8.2 Add amenities section (4 icon cards, surface-low background)
+  - [x] 8.3 Add sticky right sidebar using BookingSidebar component with "Proceed to Booking" CTA
+  - [x] 8.4 Add Turf Rules section and "Turf not found" error state
 
 - [ ] 9. Booking Page
   - [ ] 9.1 Redesign `src/pages/BookingPage.tsx` — integrate CustomCalendar component for date selection
