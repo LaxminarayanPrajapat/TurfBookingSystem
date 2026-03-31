@@ -65,12 +65,12 @@
   - [x] 12.3 Add Match History tab (past booking cards) and Rewards banner (ActionOrange gradient, redemption CTA)
   - [x] 12.4 Implement profile edit form calling AuthService.updateUserProfile on save
 
-- [ ] 13. Owner Dashboard Page
-  - [ ] 13.1 Redesign `src/pages/OwnerDashboardPage.tsx` — sidebar navigation, fetch owner's turfs via TurfStore.fetchMyTurfs and bookings via BookingStore.fetchTurfBookings on mount
-  - [ ] 13.2 Add Ground Availability grid (turf cards with status toggle calling TurfStore.updateTurf)
-  - [ ] 13.3 Add stats row (Daily Revenue, Total Bookings, Peak Hours)
-  - [ ] 13.4 Add Pending Approvals section with Accept (→ confirmed) and Reject (→ cancelled) actions
-  - [ ] 13.5 Add Price Management section (Day Rate / Night Rate inputs, save calls TurfStore.updateTurf) and Active Sessions table
+- [x] 13. Owner Dashboard Page
+  - [x] 13.1 Redesign `src/pages/OwnerDashboardPage.tsx` — sidebar navigation, fetch owner's turfs via TurfStore.fetchMyTurfs and bookings via BookingStore.fetchTurfBookings on mount
+  - [x] 13.2 Add Ground Availability grid (turf cards with status toggle calling TurfStore.updateTurf)
+  - [x] 13.3 Add stats row (Daily Revenue, Total Bookings, Peak Hours)
+  - [x] 13.4 Add Pending Approvals section with Accept (→ confirmed) and Reject (→ cancelled) actions
+  - [x] 13.5 Add Price Management section (Day Rate / Night Rate inputs, save calls TurfStore.updateTurf) and Active Sessions table
 
 - [ ] 14. Admin Dashboard Page
   - [ ] 14.1 Redesign `src/pages/AdminDashboardPage.tsx` — sidebar with "Super Admin Panel" label, stats grid (Total Revenue, Active Owners, Total Bookings, Pending Approvals)
