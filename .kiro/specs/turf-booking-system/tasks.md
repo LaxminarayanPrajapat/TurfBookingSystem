@@ -44,26 +44,26 @@
   - [x] 8.3 Add sticky right sidebar using BookingSidebar component with "Proceed to Booking" CTA
   - [x] 8.4 Add Turf Rules section and "Turf not found" error state
 
-- [ ] 9. Booking Page
-  - [ ] 9.1 Redesign `src/pages/BookingPage.tsx` — integrate CustomCalendar component for date selection
-  - [ ] 9.2 Integrate TimeSlotGrid component, fetch available slots via BookingStore on date change
-  - [ ] 9.3 Integrate BookingSidebar with live price calculation; implement "Proceed to Payment" with validation (no slot → error toast), createBooking call, and navigate to `/my-bookings`
+- [x] 9. Booking Page
+  - [x] 9.1 Redesign `src/pages/BookingPage.tsx` — integrate CustomCalendar component for date selection
+  - [x] 9.2 Integrate TimeSlotGrid component, fetch available slots via BookingStore on date change
+  - [x] 9.3 Integrate BookingSidebar with live price calculation; implement "Proceed to Payment" with validation (no slot → error toast), createBooking call, and navigate to `/my-bookings`
 
-- [ ] 10. User Dashboard Page
-  - [ ] 10.1 Create `src/pages/UserDashboardPage.tsx` — sidebar navigation (Dashboard, My Bookings, Payments, Favorites, Settings)
-  - [ ] 10.2 Add hero banner (ActionOrange promotional section), Upcoming Matches table (fetch confirmed future bookings from BookingStore)
-  - [ ] 10.3 Add Featured Turfs grid (3 cards from TurfStore) and mobile bottom navigation bar
+- [x] 10. User Dashboard Page
+  - [x] 10.1 Create `src/pages/UserDashboardPage.tsx` — sidebar navigation (Dashboard, My Bookings, Payments, Favorites, Settings)
+  - [x] 10.2 Add hero banner (ActionOrange promotional section), Upcoming Matches table (fetch confirmed future bookings from BookingStore)
+  - [x] 10.3 Add Featured Turfs grid (3 cards from TurfStore) and mobile bottom navigation bar
 
-- [ ] 11. My Bookings Page
-  - [ ] 11.1 Redesign `src/pages/MyBookingsPage.tsx` — fetch all user bookings from BookingStore on mount
-  - [ ] 11.2 Implement Upcoming / Past tab partition with booking cards showing status badges (CricketGreen for confirmed, ActionOrange for pending, grey for cancelled/completed)
-  - [ ] 11.3 Implement Cancel action calling BookingStore.cancelBooking, and empty state with "Browse Turfs" link
+- [x] 11. My Bookings Page
+  - [x] 11.1 Redesign `src/pages/MyBookingsPage.tsx` — fetch all user bookings from BookingStore on mount
+  - [x] 11.2 Implement Upcoming / Past tab partition with booking cards showing status badges (CricketGreen for confirmed, ActionOrange for pending, grey for cancelled/completed)
+  - [x] 11.3 Implement Cancel action calling BookingStore.cancelBooking, and empty state with "Browse Turfs" link
 
-- [ ] 12. User Profile Page
-  - [ ] 12.1 Redesign `src/pages/UserProfilePage.tsx` — left sidebar with avatar, display name, Gold Member badge, section links
-  - [ ] 12.2 Add stats row (Matches Played = completed bookings count, Reward Points = count × 10)
-  - [ ] 12.3 Add Match History tab (past booking cards) and Rewards banner (ActionOrange gradient, redemption CTA)
-  - [ ] 12.4 Implement profile edit form calling AuthService.updateUserProfile on save
+- [x] 12. User Profile Page
+  - [x] 12.1 Redesign `src/pages/UserProfilePage.tsx` — left sidebar with avatar, display name, Gold Member badge, section links
+  - [x] 12.2 Add stats row (Matches Played = completed bookings count, Reward Points = count × 10)
+  - [x] 12.3 Add Match History tab (past booking cards) and Rewards banner (ActionOrange gradient, redemption CTA)
+  - [x] 12.4 Implement profile edit form calling AuthService.updateUserProfile on save
 
 - [ ] 13. Owner Dashboard Page
   - [ ] 13.1 Redesign `src/pages/OwnerDashboardPage.tsx` — sidebar navigation, fetch owner's turfs via TurfStore.fetchMyTurfs and bookings via BookingStore.fetchTurfBookings on mount
