@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useTurfStore } from '@store/turfStore';
+import { useTurfStore } from '../store/turfStore';
 import { FiMapPin, FiStar, FiUsers, FiClock, FiSearch } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 

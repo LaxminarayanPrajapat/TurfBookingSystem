@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 const UserProfilePage: React.FC = () => {
     const { user, logout } = useAuthStore();
     const navigate = useNavigate();
-  
+
 
     const handleLogout = async () => {
         try {
