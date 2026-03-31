@@ -22,9 +22,9 @@
   - [x] 4.1 Add `/dashboard` route (UserDashboardPage, ProtectedRoute) and `/tournament/:turfId` route (TournamentBookingPage, ProtectedRoute) to `src/App.tsx`
   - [x] 4.2 Import and register `UserDashboardPage` and `TournamentBookingPage` in `src/App.tsx`
 
-- [ ] 5. Authentication Pages
-  - [ ] 5.1 Redesign `src/pages/LoginPage.tsx` — KineticArena styling, ActionOrange GradientButton, error toast on invalid credentials
-  - [ ] 5.2 Redesign `src/pages/RegisterPage.tsx` — KineticArena styling, client-side validation for password length and 10-digit phone, GradientButton
+- [x] 5. Authentication Pages
+  - [x] 5.1 Redesign `src/pages/LoginPage.tsx` — KineticArena styling, ActionOrange GradientButton, error toast on invalid credentials
+  - [x] 5.2 Redesign `src/pages/RegisterPage.tsx` — KineticArena styling, client-side validation for password length and 10-digit phone, GradientButton
 
 - [ ] 6. Home Page
   - [ ] 6.1 Redesign `src/pages/HomePage.tsx` — hero section with search bar (location + date inputs, Search GradientButton navigating to `/browse`)
