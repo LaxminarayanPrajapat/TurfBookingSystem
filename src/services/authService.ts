@@ -8,7 +8,7 @@ import {
 } from 'firebase/auth';
 import { auth, db } from './firebase';
 import type { User } from '../types';
-import { doc, setDoc, getDoc } from 'firebase/firestore';
+import { doc, setDoc, getDoc, collection, getDocs } from 'firebase/firestore';
 
 export const authService = {
     async register(email: string, password: string, displayName: string, phoneNumber: string) {
@@ -52,5 +52,14 @@ export const authService = {
 
     async updateUserProfile(uid: string, data: Partial<User>) {
         await setDoc(doc(db, 'users', uid), data, { merge: true });
+    },
+
+    async getAllUsers(): Promise<User[]> {
+        const snapshot = await getDocs(collection(db, 'users'));
+        return snapshot.docs.map((d) => d.data() as User);
+    },
+
+    async updateUserSuspension(uid: string, suspended: boolean) {
+        await setDoc(doc(db, 'users', uid), { suspended }, { merge: true });
     },
 };

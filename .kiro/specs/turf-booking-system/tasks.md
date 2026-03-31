@@ -72,10 +72,10 @@
   - [x] 13.4 Add Pending Approvals section with Accept (→ confirmed) and Reject (→ cancelled) actions
   - [x] 13.5 Add Price Management section (Day Rate / Night Rate inputs, save calls TurfStore.updateTurf) and Active Sessions table
 
-- [ ] 14. Admin Dashboard Page
-  - [ ] 14.1 Redesign `src/pages/AdminDashboardPage.tsx` — sidebar with "Super Admin Panel" label, stats grid (Total Revenue, Active Owners, Total Bookings, Pending Approvals)
-  - [ ] 14.2 Add Owner Management table with real-time search filter, Approve/Suspend/Reactivate actions (update Firestore users/{uid}.suspended)
-  - [ ] 14.3 Add Recent Platform Activity feed (10 most recent bookings) and Platform Health card
+- [x] 14. Admin Dashboard Page
+  - [x] 14.1 Redesign `src/pages/AdminDashboardPage.tsx` — sidebar with "Super Admin Panel" label, stats grid (Total Revenue, Active Owners, Total Bookings, Pending Approvals)
+  - [x] 14.2 Add Owner Management table with real-time search filter, Approve/Suspend/Reactivate actions (update Firestore users/{uid}.suspended)
+  - [x] 14.3 Add Recent Platform Activity feed (10 most recent bookings) and Platform Health card
 
 - [ ] 15. Tournament Booking Page
   - [ ] 15.1 Create `src/pages/TournamentBookingPage.tsx` — tournament details form (Tournament Name, Team Count, Format toggle, Special Requirements)

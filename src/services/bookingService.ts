@@ -7,6 +7,8 @@ import {
     doc,
     setDoc,
     updateDoc,
+    orderBy,
+    limit,
 } from 'firebase/firestore';
 import { db } from './firebase';
 import type { Booking } from '../types';
@@ -65,6 +67,13 @@ export const bookingService = {
             status: 'cancelled',
             updatedAt: new Date(),
         });
+    },
+
+    async getAllBookings(): Promise<Booking[]> {
+        const snapshot = await getDocs(collection(db, 'bookings'));
+        const bookings: Booking[] = [];
+        snapshot.forEach((d) => bookings.push(d.data() as Booking));
+        return bookings.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
     },
 
     async getBookingsByTurfAndDate(
