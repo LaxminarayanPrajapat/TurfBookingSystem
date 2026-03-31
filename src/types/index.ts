@@ -7,6 +7,8 @@ export interface User {
     role: 'user' | 'turf_owner' | 'admin';
     createdAt: Date;
     avatar?: string;
+    suspended?: boolean;
+    rewardPoints?: number;
 }
 
 // Turf types
@@ -25,6 +27,10 @@ export interface Turf {
     rating: number;
     reviewCount: number;
     isAvailable: boolean;
+    dayRate?: number;
+    nightRate?: number;
+    pitchType?: string;
+    featured?: boolean;
     createdAt: Date;
     updatedAt: Date;
 }
@@ -40,6 +46,13 @@ export interface Booking {
     status: 'pending' | 'confirmed' | 'cancelled' | 'completed';
     paymentStatus: 'pending' | 'completed' | 'failed';
     specialRequests?: string;
+    turfName?: string;
+    bookingType?: 'regular' | 'tournament';
+    tournamentDetails?: {
+        tournamentName: string;
+        teamCount: number;
+        format: 'single_day' | 'multi_day';
+    };
     createdAt: Date;
     updatedAt: Date;
 }

@@ -15,6 +15,8 @@ import MyBookingsPage from './pages/MyBookingsPage';
 import UserProfilePage from './pages/UserProfilePage';
 import AdminDashboardPage from './pages/AdminDashboardPage';
 import OwnerDashboardPage from './pages/OwnerDashboardPage';
+import UserDashboardPage from './pages/UserDashboardPage';
+import TournamentBookingPage from './pages/TournamentBookingPage';
 
 // Components
 import Navbar from './components/Navbar';
@@ -63,6 +65,24 @@ function App() {
                         element={
                             <ProtectedRoute>
                                 <UserProfilePage />
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    {/* Protected Routes - User Dashboard & Tournament */}
+                    <Route
+                        path="/dashboard"
+                        element={
+                            <ProtectedRoute>
+                                <UserDashboardPage />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/tournament/:turfId"
+                        element={
+                            <ProtectedRoute>
+                                <TournamentBookingPage />
                             </ProtectedRoute>
                         }
                     />
