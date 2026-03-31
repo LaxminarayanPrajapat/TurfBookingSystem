@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cricket Turf - User Profile &amp; Match History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .active-tab { border-bottom: 3px solid #ec5b13; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 md:px-20 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">sports_cricket</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">Cricket Turf</h2>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<div class="hidden md:flex gap-6 mr-6">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-semibold" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-semibold" href="#">Bookings</a>
+<a class="text-primary text-sm font-semibold" href="#">Profile</a>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile avatar of Rahul Sharma" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCRXFOeEnt58KDH1yf1a3RNWsnlw7-YkacZCF7v4D8UgNiJd7RE-5QpmM1SFCrVGDmIOw3Fa-MPQXP-Wtq7s4aoAv4lHRnjUWoYNuiNoFzJi8aNzW0LkpE69tZBoDm_tdL0S1e6UB5lOKHcdpJUnDiyAiybv_8dH2IX-lcx2C8cs4SZ33wpfZxmW1le_aPDsIaTNuhQAyNPunH_H5H8OsIEuDFoq3I_qDTfGNthobWv5WdQF7-FTRG5l5zwMUzlY3CbiCyuRAnjru-I");'></div>
+</div>
+</header>
+<main class="flex-1 max-w-[1200px] mx-auto w-full p-4 md:p-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<aside class="lg:col-span-3 space-y-6">
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800 text-center">
+<div class="relative inline-block mb-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-28 border-4 border-primary/10 mx-auto" data-alt="Large user profile picture Rahul Sharma" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDn5J2gTQpbOcIt0Uz9c2eDBR5UdRkjLxQC9X-Mhrd016I9QhPnLVS01AdJBW-DM7CwwznEw0ALsvZXz-1kv0NzA4jUHRWz_jBYEDccdbHJCv-IxnXEkfdubfjrkLSmrGJWMxmmDXR4MN4rxgiAYOe-9ZN2RkV8pv35dyp_4HcBJin8pNHj0NjcJRJrbMG7By22Lxc9hBdpla-iXXTSxm_qD9uYzT0Df1lCboZYCVBn_sP8GH8xZL4kqB16h5oegb2Geshjm62tIreK");'></div>
+<button class="absolute bottom-0 right-0 bg-primary text-white p-1.5 rounded-full shadow-lg border-2 border-white dark:border-slate-900 flex">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<h1 class="text-slate-900 dark:text-white text-xl font-bold">Rahul Sharma</h1>
+<p class="text-primary text-sm font-medium">Gold Member</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Member since Jan 2023</p>
+<div class="mt-6 flex flex-col gap-2">
+<button class="w-full py-2.5 px-4 bg-primary text-white rounded-xl font-bold text-sm hover:opacity-90 transition-opacity">View Digital ID</button>
+<button class="w-full py-2.5 px-4 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl font-bold text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">Edit Profile</button>
+</div>
+</div>
+<nav class="bg-white dark:bg-slate-900 rounded-xl p-2 shadow-sm border border-slate-200 dark:border-slate-800">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:fill-1">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:fill-1">calendar_month</span>
+<span class="text-sm font-medium">Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined fill-1">person</span>
+<span class="text-sm font-bold">Profile Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:fill-1">wallet</span>
+<span class="text-sm font-medium">Payment Methods</span>
+</a>
+<div class="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+<a class="flex items-center gap-3 px-4 py-3 text-red-500 hover:bg-red-50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-sm font-medium">Sign Out</span>
+</a>
+</nav>
+</aside>
+<div class="lg:col-span-9 space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4">
+<div class="size-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined">sports_score</span>
+</div>
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider">Matches Played</p>
+<p class="text-slate-900 dark:text-white text-2xl font-bold">24</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">stars</span>
+</div>
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider">Reward Points</p>
+<p class="text-slate-900 dark:text-white text-2xl font-bold">1,250</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4">
+<div class="size-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider">Win Rate</p>
+<p class="text-slate-900 dark:text-white text-2xl font-bold">65%</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
+<div class="flex border-b border-slate-100 dark:border-slate-800 px-4">
+<button class="px-6 py-4 text-primary font-bold text-sm active-tab">Match History</button>
+<button class="px-6 py-4 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-semibold text-sm">Favorite Turfs</button>
+<button class="px-6 py-4 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-semibold text-sm">Rewards</button>
+</div>
+<div class="p-4 md:p-6 space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold">Recent Activities</h3>
+<button class="text-primary text-sm font-semibold hover:underline">Download Report</button>
+</div>
+<div class="space-y-3">
+<div class="flex flex-col md:flex-row md:items-center gap-4 p-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50 hover:border-primary/30 transition-all group">
+<div class="size-16 rounded-lg overflow-hidden flex-shrink-0">
+<div class="w-full h-full bg-center bg-cover" data-alt="Aerial view of green cricket turf" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBcNRvGA_GNLdn-fETwdgFsmfiaIucoakrb7WWAPz3CCPwJtgMX6NJEiivTNMDRnqjViFvD5Gk_70pJvn2qX2OjXcWB2c-RLCDMo5ulMEYbDrjC1GnoxFsfJKV4LjPC-5gvKFcdRn75VQw57khAPzOZ21kSVcwgqrgDWJq3Jr0YQgtnUa-JgtTkMulNiPPVpNFxOxyBpvDFm2kzmEhVq3Je1zjHaK6sSekL83pqJvpUTJfipxlMkiPPPy8qcnk-WpFlpEH57LJqn9w');"></div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">Mumbai Central Arena - Pitch 2</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span> Oct 24, 2023 • 18:00 - 20:00
+                                                    </p>
+</div>
+<span class="px-2.5 py-1 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-400 text-[10px] font-bold uppercase rounded-full">Completed</span>
+</div>
+<div class="mt-2 flex items-center gap-4">
+<span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Score: 142/4 (20)</span>
+<div class="flex -space-x-2">
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200" data-alt="Teammate avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-4Mzeu9oq6KCFUs400gHWZtzRoqEuoPug_iNUOtqputOwcxtv_Wt4N52RbgsV18TLpNwA-oKezQzyv1kPVTiUdjUVrh_wcjwRxmiW1vmg4kNOxIBwMHnSaNvR-z4lzGJXzAqQpZGQlh9Rg5_ksVWcLsE2lXlarZk9-3Jx4YFKDdRPozlyFkvBj34Pb3X-l367Tk64IrmZol2u-T16wlbV7bpGslVHKU9i1hulpU4AQnnOmfTG_ng7zl26WoUzvwJGfJH5JxpEcWIw'); background-size: cover;"></div>
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200" data-alt="Teammate avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBw8ZHdxFozAJUoWb3Z0FLqhgDpncmfJ3pLve4BzKF7G3idpEbBoLlwXSwfl9q76nwG0TwNgTSRV8M17Cb9ifY2vWIqkgCzLuO-5ClieeE00GCENw2IEsi5ZYM_W6blItqp7xLHlh9uJna9OSLnCeLJOnMlsRlQTJyJ7WmzW1PwhvUv4Y8Q2u_fBnvT7MKMNwaUxPDlBAu4V3rbBENXzN4Pfp9nlqAF9PrRsVfL3ZQZpQaetzm-5SYHDRetrtxgKUQry9FP5g3lWuOP'); background-size: cover;"></div>
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200 flex items-center justify-center text-[8px] font-bold text-slate-500">+8</div>
+</div>
+</div>
+</div>
+<button class="flex items-center justify-center p-2 rounded-lg bg-white dark:bg-slate-700 text-slate-400 hover:text-primary border border-slate-200 dark:border-slate-600 shadow-sm">
+<span class="material-symbols-outlined">receipt_long</span>
+</button>
+</div>
+<div class="flex flex-col md:flex-row md:items-center gap-4 p-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50 hover:border-primary/30 transition-all group">
+<div class="size-16 rounded-lg overflow-hidden flex-shrink-0">
+<div class="w-full h-full bg-center bg-cover" data-alt="Indoor cricket facility with nets" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3e2T9ZaX-Um4X8wGM0fwTO9EACA95sBZtdcYJ9wyNXLYzWEkeh2haAXNnXQJ8QUBnugKGQ73vbaLWX9_ltxOt-s5ugG8FiSZZ-lDcQon6mR__luxc3jdnyWcqtYofj9uL_47NMDUxBC6xAglMvLD4mEAI1FVY_OL1Tf-9EGaIeg3P5TAqOS2gnnp0gIgyAzXPCqtKwlRmwtVw8H5MqBe31h1UIk88KhQFAZ0yf806qbhByzmUPiFnN-V23atlIri1CNzt5ZazbqL7');"></div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">Star Sports Indoor Complex</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span> Oct 18, 2023 • 20:00 - 21:30
+                                                    </p>
+</div>
+<span class="px-2.5 py-1 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-400 text-[10px] font-bold uppercase rounded-full">Completed</span>
+</div>
+<div class="mt-2 flex items-center gap-4">
+<span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Score: 88/8 (12)</span>
+<div class="flex -space-x-2">
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200" data-alt="Teammate avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDbWf-slwhmm0V8wKTW3RNBSJNpMj_dmZaqoJ8Wj4eOD_Gkj3QZZ9fi-1G1ZOd1Tm4R8z7IpL2HGho1MkvZ21Vi7zCynCCWO33Hz9p-ljH-tAQRxqPhOXOsGl1_oOFiGI2fLSVUYyBCM04Gk-0Z8tZpa3MXCy4FEmDa6bu0Jwm-k1gXrFFsqLoucSR9ifC7PBvBp83P2sMs_T4WAsJo0dakQiF1FgiVjC1THSyOnRh77qDzyGfB0WWCdWL3PK1e7CUHzlBJ3ZfvKZwa'); background-size: cover;"></div>
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200" data-alt="Teammate avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZGj8hG8pFf4ExUGFJGDw5CGiyvumB6IP_H0eFXKiJzVxOgqWPseebEoUDWB6k6gcRf7Lm-TbS-VvFQCIe2Amq3Gv33ySwkiEyvaGAU90NO6xTJCQGuVV3gLEo4VsW0p-msjT0J8xZqa0EOHhNy_dWh-qQinfCChmSMY-lASpemeVpClqjIzQYpeqsQxns5kEFf8J9LU3fEJqH4tEjkxvW2AwDmnyLGV9wAYx84jj0q_OC_-PKwwIYEcdqLgFpMCYpPwRmRrSjaV7h'); background-size: cover;"></div>
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200 flex items-center justify-center text-[8px] font-bold text-slate-500">+4</div>
+</div>
+</div>
+</div>
+<button class="flex items-center justify-center p-2 rounded-lg bg-white dark:bg-slate-700 text-slate-400 hover:text-primary border border-slate-200 dark:border-slate-600 shadow-sm">
+<span class="material-symbols-outlined">receipt_long</span>
+</button>
+</div>
+<div class="flex flex-col md:flex-row md:items-center gap-4 p-4 rounded-xl border-2 border-primary/20 bg-primary/5 group">
+<div class="size-16 rounded-lg overflow-hidden flex-shrink-0">
+<div class="w-full h-full bg-center bg-cover" data-alt="Sunlit open cricket ground" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAuiZs9nLpdnKzEN_D9WUhqFuk7sAdC9LrunRijvVzbKuaTNeimq6ag7KgF0vtibAryG5Mgb07QTEW-oVVolk5KV0vJZbkR80MfvB0lspih3sVcO25Vb9CsrhkzUbH5s1rlT9j5mqW-DpCrMleEg_vXX4c7Re3u7GHts4m73xxLYWjG3ks5I6bGXUYbRcbN_AjZvA8qz5b6njfVOtubkiKm-ySKc4xMEeVyVT-m6jbCoclpLOiVKjmAKTKE9NGokPWjWtlFa63PISdg');"></div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">Skyline Rooftop Turf</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span> Oct 31, 2023 • 19:00 - 21:00
+                                                    </p>
+</div>
+<span class="px-2.5 py-1 bg-primary text-white text-[10px] font-bold uppercase rounded-full">Upcoming</span>
+</div>
+<div class="mt-2 flex items-center justify-between">
+<p class="text-xs text-slate-600 dark:text-slate-400">Team: Red Blasters (6 confirmed)</p>
+<button class="text-xs font-bold text-primary hover:underline">Manage Team</button>
+</div>
+</div>
+<button class="flex items-center justify-center p-2 rounded-lg bg-primary text-white shadow-md">
+<span class="material-symbols-outlined">qr_code_2</span>
+</button>
+</div>
+</div>
+<button class="w-full py-3 text-sm font-bold text-slate-500 dark:text-slate-400 border border-dashed border-slate-300 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                                    Load More History
+                                </button>
+</div>
+</div>
+<div class="bg-gradient-to-r from-primary to-[#ff7e3d] rounded-2xl p-6 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-5">
+<div class="size-16 rounded-full bg-white/20 flex items-center justify-center border border-white/30 backdrop-blur-md">
+<span class="material-symbols-outlined text-3xl">card_membership</span>
+</div>
+<div>
+<h3 class="text-xl font-bold">Premium Rewards</h3>
+<p class="text-white/80 text-sm">You're only 250 points away from a FREE 1-hour session!</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-semibold uppercase tracking-widest opacity-80">Next Goal</p>
+<p class="font-bold">1,500 pts</p>
+</div>
+<button class="bg-white text-primary px-6 py-2.5 rounded-xl font-bold text-sm shadow-sm hover:bg-slate-50 transition-colors">
+                                    Redeem Points
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-8 mt-auto">
+<div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="size-6 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xs">sports_cricket</span>
+</div>
+<span class="font-bold text-slate-900 dark:text-white">Cricket Turf</span>
+</div>
+<div class="flex gap-8 text-xs font-semibold text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+<p class="text-xs text-slate-400">© 2023 Cricket Turf Booking App. All rights reserved.</p>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TurfMaster Admin - Management Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar -->
+<aside class="hidden md:flex flex-col w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<span class="material-symbols-outlined block">sports_soccer</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-primary">TurfMaster</h2>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary text-white font-medium" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+                Bookings
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+                Pricing
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                Inventory
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-colors" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+                Reports
+            </a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2">
+<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Profile picture of turf administrator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL-77HZuJpMJUX_pkwn8acW3iVnQoYCEyYyF-kwlIUuN3uzSEAVkeE3R8ZJJIdH9d7fkEL-53IyrRm7qqFI2FZgbQjUBkXR6DejwJw8OFg_Q0zX82B7cGdgb4JX6fFACXw9_3Z2e1xEb72DJ19RGWiqDCrtxdK6Mkc_Ssw3-Rpo1zSAiIUMtd1FrhGpcAG_vZd-cA4qQ7gkvXFiGQ3it_XLuy5mxBW2R2ZAh9S8-m8mArhqKEetSiDFUcHs3rzBnL_CQNnyYtoJa04"/>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="text-sm font-bold truncate">Alex Morgan</p>
+<p class="text-xs text-slate-500 truncate">GreenField Manager</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer">settings</span>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col overflow-y-auto bg-background-light dark:bg-background-dark">
+<!-- Top Nav -->
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md flex items-center justify-between px-8 sticky top-0 z-10">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-xl focus:ring-2 focus:ring-primary/50 text-sm" placeholder="Search bookings, players..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-primary rounded-full border-2 border-white dark:border-background-dark"></span>
+</button>
+<button class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-xl text-sm font-semibold transition-colors">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+                    Manual Entry
+                </button>
+</div>
+</header>
+<div class="p-8 space-y-8 max-w-7xl mx-auto w-full">
+<!-- Header section -->
+<div>
+<h1 class="text-3xl font-black tracking-tight mb-2">Dashboard Overview</h1>
+<p class="text-slate-500 dark:text-slate-400">Manage GreenField Arena's turf operations and daily revenue.</p>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-lg">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<span class="text-emerald-500 text-sm font-bold bg-emerald-50 dark:bg-emerald-900/20 px-2 py-0.5 rounded">+12.5%</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Revenue (Weekly)</p>
+<p class="text-3xl font-bold mt-1 tracking-tight">$4,250.00</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-lg">
+<span class="material-symbols-outlined">pending_actions</span>
+</div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Pending Requests</p>
+<p class="text-3xl font-bold mt-1 tracking-tight">12</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg">
+<span class="material-symbols-outlined">event_available</span>
+</div>
+<span class="text-emerald-500 text-sm font-bold bg-emerald-50 dark:bg-emerald-900/20 px-2 py-0.5 rounded">+2%</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Today's Bookings</p>
+<p class="text-3xl font-bold mt-1 tracking-tight">8</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Pending Approvals -->
+<div class="lg:col-span-2 space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">notification_important</span>
+                            Pending Approvals
+                        </h2>
+<a class="text-primary text-sm font-bold hover:underline" href="#">View All</a>
+</div>
+<div class="space-y-4">
+<!-- Request Card 1 -->
+<div class="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-wrap md:flex-nowrap items-center gap-6">
+<div class="flex items-center gap-4 flex-1">
+<div class="size-12 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<h4 class="font-bold">John Doe</h4>
+<p class="text-sm text-slate-500">Today, 06:00 PM - 07:00 PM</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">7-a-side</span>
+<div class="flex gap-2">
+<button class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-1.5 rounded-lg text-sm font-bold transition-colors">Accept</button>
+<button class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 px-4 py-1.5 rounded-lg text-sm font-bold transition-colors">Reject</button>
+</div>
+</div>
+</div>
+<!-- Request Card 2 -->
+<div class="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-wrap md:flex-nowrap items-center gap-6">
+<div class="flex items-center gap-4 flex-1">
+<div class="size-12 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<h4 class="font-bold">Sarah Williams</h4>
+<p class="text-sm text-slate-500">Tomorrow, 08:00 PM - 09:30 PM</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">5-a-side</span>
+<div class="flex gap-2">
+<button class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-1.5 rounded-lg text-sm font-bold transition-colors">Accept</button>
+<button class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 px-4 py-1.5 rounded-lg text-sm font-bold transition-colors">Reject</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Price Management Section -->
+<div class="pt-4">
+<h2 class="text-xl font-bold flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">sell</span>
+                            Price Management
+                        </h2>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Day Hourly Rate ($)</label>
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">$</span>
+<input class="w-full pl-8 pr-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-600 bg-transparent focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" type="number" value="45.00"/>
+</div>
+<span class="text-xs text-slate-400">06:00 - 18:00</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Night Hourly Rate ($)</label>
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">$</span>
+<input class="w-full pl-8 pr-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-600 bg-transparent focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" type="number" value="65.00"/>
+</div>
+<span class="text-xs text-slate-400">18:00 - 02:00</span>
+</div>
+</div>
+</div>
+<div class="mt-6 flex justify-end">
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-xl font-bold transition-all shadow-lg shadow-primary/20">Update Pricing</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Sessions -->
+<div class="lg:col-span-1 space-y-6">
+<h2 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">timer</span>
+                        Active Sessions
+                    </h2>
+<div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-900/50">
+<tr>
+<th class="px-4 py-3 text-xs font-bold text-slate-500 uppercase tracking-wider">Player / Court</th>
+<th class="px-4 py-3 text-xs font-bold text-slate-500 uppercase tracking-wider">Status</th>
+<th class="px-4 py-3 text-xs font-bold text-slate-500 uppercase tracking-wider">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+<!-- Session 1 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+<td class="px-4 py-4">
+<p class="font-bold text-sm">Mike Ross</p>
+<p class="text-xs text-slate-500">Court A • Ends 04:30 PM</p>
+</td>
+<td class="px-4 py-4">
+<span class="px-2 py-1 rounded bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-[10px] font-bold uppercase">Post-paid</span>
+</td>
+<td class="px-4 py-4">
+<button class="text-primary hover:bg-primary/10 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors border border-primary/20">Collect</button>
+</td>
+</tr>
+<!-- Session 2 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+<td class="px-4 py-4">
+<p class="font-bold text-sm">Team Elite</p>
+<p class="text-xs text-slate-500">Court B • Ends 05:00 PM</p>
+</td>
+<td class="px-4 py-4">
+<span class="px-2 py-1 rounded bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold uppercase">Pre-paid</span>
+</td>
+<td class="px-4 py-4">
+<span class="material-symbols-outlined text-emerald-500 text-lg">check_circle</span>
+</td>
+</tr>
+<!-- Session 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+<td class="px-4 py-4">
+<p class="font-bold text-sm">Jessica P.</p>
+<p class="text-xs text-slate-500">Court A • Ends 05:30 PM</p>
+</td>
+<td class="px-4 py-4">
+<span class="px-2 py-1 rounded bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-[10px] font-bold uppercase">Post-paid</span>
+</td>
+<td class="px-4 py-4">
+<button class="text-primary hover:bg-primary/10 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors border border-primary/20">Collect</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-slate-50 dark:bg-slate-900/50 text-center">
+<button class="text-sm font-bold text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">View All Sessions</button>
+</div>
+</div>
+<!-- Mini Calendar/Schedule View -->
+<div class="bg-primary/10 dark:bg-primary/5 p-6 rounded-xl border border-primary/20 border-dashed">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">event</span>
+<h3 class="font-bold">Next Reservation</h3>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-2 font-medium">Starts in 45 minutes</p>
+<div class="flex items-center justify-between">
+<p class="text-lg font-bold">Haris FC (5-a-side)</p>
+<span class="text-primary font-black">06:00 PM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

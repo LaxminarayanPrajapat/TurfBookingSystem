@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CricTurf - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#ec5b13",
+                "background-light": "#f8f6f6",
+                "background-dark": "#221610",
+              },
+              fontFamily: {
+                "display": ["Public Sans"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark hidden md:flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<span class="material-symbols-outlined text-2xl">sports_cricket</span>
+</div>
+<h1 class="text-2xl font-black tracking-tight text-primary">CricTurf</h1>
+</div>
+<nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary/10 text-primary font-semibold" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">event_available</span>
+<span>Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">emoji_events</span>
+<span>Tournaments</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span>Payments</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">grass</span>
+<span>My Grounds</span>
+</a>
+<div class="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</div>
+</nav>
+<div class="p-4">
+<button class="w-full flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-xl font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-xl">add_circle</span>
+<span>Add New Turf</span>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+<!-- Header -->
+<header class="h-20 flex items-center justify-between px-8 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark/50 backdrop-blur-md z-10">
+<div class="flex-1 max-w-xl">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-slate-100 dark:bg-slate-800 border-none rounded-xl focus:ring-2 focus:ring-primary/50 text-slate-900 dark:text-slate-100 placeholder:text-slate-400" placeholder="Search turfs, matches, or locations..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4 ml-8">
+<button class="relative p-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border-2 border-white dark:border-background-dark"></span>
+</button>
+<button class="p-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">
+<span class="material-symbols-outlined">calendar_today</span>
+</button>
+<div class="h-8 w-px bg-slate-200 dark:border-slate-800 mx-2"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-bold leading-none">Alex Johnson</p>
+<p class="text-xs text-slate-500 mt-1">Ground Owner</p>
+</div>
+<img class="w-10 h-10 rounded-full object-cover border-2 border-primary/20" data-alt="User profile avatar photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtFPmUnLnhueBHiAgeLAMxmZLEf89TfwcYIkW3E4nsUynBEsdf1G5FsEsT--dEttDu4FKFBFIRPf8yn7RGN3C96IhAi66xkGhpImkxCD_XNpMLyZrdQ2BneVVG7z525cJTZog5gJSnCypq4AUUrk6-ZE2MKbNt14xwTxqSQsWs8q_5tQQuZilNX4YQi1g-kf5GOOfGs5KioH8yN4VSWKrFVu9imzyExKQVjR5pHeN8Epfl9YnLPgSf-vPleuhp4K8XxfcaICsoU34D"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Body -->
+<main class="flex-1 overflow-y-auto p-8 bg-slate-50 dark:bg-background-dark/30">
+<div class="max-w-7xl mx-auto">
+<!-- Welcome Section -->
+<div class="flex flex-wrap items-center justify-between gap-6 mb-10">
+<div>
+<h2 class="text-4xl font-black text-slate-900 dark:text-white tracking-tight">Ground Availability</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-2 text-lg">Real-time status of your premium cricket turfs.</p>
+</div>
+<button class="flex items-center gap-2 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 px-6 py-3 rounded-xl font-bold hover:opacity-90 transition-all shadow-xl shadow-slate-200 dark:shadow-none">
+<span class="material-symbols-outlined">trophy</span>
+<span>Book Tournament</span>
+</button>
+</div>
+<!-- Filter Tabs -->
+<div class="flex border-b border-slate-200 dark:border-slate-800 mb-8 gap-8 overflow-x-auto no-scrollbar">
+<button class="pb-4 px-2 text-primary font-bold border-b-2 border-primary whitespace-nowrap">All Grounds</button>
+<button class="pb-4 px-2 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 font-semibold whitespace-nowrap">Main Arena</button>
+<button class="pb-4 px-2 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 font-semibold whitespace-nowrap">Practice Pitches</button>
+<button class="pb-4 px-2 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 font-semibold whitespace-nowrap">Indoor Nets</button>
+</div>
+<!-- Ground Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Ground A -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-shadow group">
+<div class="relative h-48">
+<img class="w-full h-full object-cover" data-alt="Professional cricket ground with green grass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB9jIkL39Ntd8DZtuL9cTt4gQ5Q_GOPTPF_3lEbA7CCJ5I1X8Ho7vEzkLzdNGnMeTQC1SiNMOJa2QqWsUQy6u6mmFvRiwHZxpekhiew3u-nGhkqfE6yx5hF3-xW_JLN4MH6KRyCOepmMaOa7MWA9aGdmpV-xWNl-3M3aZe67gKVjP7AdpPjhnhYqs6Tpbw3KVGvQ3TmMBCiCcRmKFx9I750Hcrv-nxrDp4lUif6sDlYz1V4yp2628W_qeoxXuBnBv5p_37JN0AdarR"/>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-green-500 text-white text-xs font-bold flex items-center gap-1 shadow-lg">
+<span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                                    Available
+                                </div>
+<div class="absolute bottom-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-2 py-1 rounded-lg flex gap-2 text-slate-600 dark:text-slate-300 shadow-sm">
+<span class="material-symbols-outlined text-sm">wb_sunny</span>
+<span class="material-symbols-outlined text-sm">dark_mode</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg">Ground A - Main</h3>
+<span class="text-primary font-black text-xl">$40<span class="text-sm text-slate-500 font-normal">/hr</span></span>
+</div>
+<p class="text-slate-500 text-sm mb-4">Lush outfield, 2 professional wickets, premium floodlights.</p>
+<button class="w-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white py-2.5 rounded-xl font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+                                    Quick Book
+                                    <span class="material-symbols-outlined text-lg">bolt</span>
+</button>
+</div>
+</div>
+<!-- Ground B -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-shadow group">
+<div class="relative h-48">
+<img class="w-full h-full object-cover opacity-80" data-alt="A brightly lit indoor cricket pitch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzG6sWsz_ywD3CraBKcGfn_4VbzH7CeHKS5wzv5ym1TZ5qKFEyxf3Y0naJTcYH2JeXtuPCu2tPfSqMfdDPb3bxRKMNU94Vtn-79eg7ym8wWJ314wg09FNWJVEBv_ar84k-IlGbKPzKmkQsdIiLbhphS2Vz-Qa5j4QkXAQFa3K3AW-6yNCWX3LgPbOayq6raWLz7y0shCmFazLe6xTEoV2hWOaVVOTEkaQDgNtqWD3ZnheS1a6zf3YoXfD9-geNn8j9HVuIhaorJW0_"/>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-red-500 text-white text-xs font-bold flex items-center gap-1 shadow-lg">
+                                    Occupied
+                                </div>
+<div class="absolute bottom-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-2 py-1 rounded-lg flex gap-2 text-slate-600 dark:text-slate-300 shadow-sm">
+<span class="material-symbols-outlined text-sm">wb_sunny</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg">Ground B - East</h3>
+<span class="text-primary font-black text-xl">$45<span class="text-sm text-slate-500 font-normal">/hr</span></span>
+</div>
+<p class="text-slate-500 text-sm mb-4">East pavilion access. Perfect for local league matches.</p>
+<div class="flex gap-2">
+<button class="w-full border-2 border-slate-200 dark:border-slate-700 text-slate-500 py-2.5 rounded-xl font-bold cursor-not-allowed">
+                                        Occupied till 8 PM
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Pitch 1 -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-shadow group">
+<div class="relative h-48">
+<div class="w-full h-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+<img class="w-full h-full object-cover grayscale" data-alt="Cricket net practice area under maintenance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKqEV5-lCirmaa_MzRbPMjbrUt-kObZgZ45aN3aCClCpiPPHoRCE9RbH5hR2Q6uf8hEzBdUK7lpW8WuSKHcbsVWVWgIQ6qj6STLpCIzV4KarAakf_aZ8dWPbWyZ1sanDBd6ZkIrIQAiBaxGTMdauK5zryi5BKPNwh9KkUr4gWMoLMOn1GgAQau5PQUA69wp1bdqdMITu4mswTM0fruHcctIuKfEASt9e8vI_SVPqlxxOXWtkQw7FwPa92ztYu0QFAtaerBaE_0WQzf"/>
+<div class="absolute inset-0 bg-slate-900/40 flex flex-col items-center justify-center text-white">
+<span class="material-symbols-outlined text-4xl mb-2">construction</span>
+<span class="font-black">MAINTENANCE</span>
+</div>
+</div>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-amber-500 text-white text-xs font-bold flex items-center gap-1 shadow-lg">
+                                    Under Review
+                                </div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg">Pitch 1 - Net</h3>
+<span class="text-primary font-black text-xl">$20<span class="text-sm text-slate-500 font-normal">/hr</span></span>
+</div>
+<p class="text-slate-500 text-sm mb-4">Synthetic turf for fast bowling drills. Re-opening soon.</p>
+<button class="w-full bg-slate-100 dark:bg-slate-800 text-slate-400 py-2.5 rounded-xl font-bold flex items-center justify-center gap-2 cursor-not-allowed">
+                                    Notify Me
+                                </button>
+</div>
+</div>
+<!-- Pitch 2 -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-shadow group">
+<div class="relative h-48">
+<img class="w-full h-full object-cover" data-alt="Cricket practice nets area" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZMw1h3iKOJknZpDcqOhqzKemiwQKc7IBn6E35XryPzaX4bn5rAQXwHjeYvcjC__BK7r-BEl8uSi6i1KEnNbvZ4GGNZrrjrny0QtX2m8I0L2wkPc9fN6wxrFVBVSeovYzpgFjmDHdQoWxlqykuwlY59OVwdpEEabaFMjlYiEtGPus19ipXmYbM_XsI2W5Mg6Go3oX80RGcXKy1mz1DDKpbhybDRglr24VQ9BXOXB-volwGd4WQAQjUKkKBEjvnT0s8KB7mAnqk0VzU"/>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-green-500 text-white text-xs font-bold flex items-center gap-1 shadow-lg">
+<span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                                    Available
+                                </div>
+<div class="absolute bottom-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-2 py-1 rounded-lg flex gap-2 text-slate-600 dark:text-slate-300 shadow-sm">
+<span class="material-symbols-outlined text-sm">wb_sunny</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg">Pitch 2 - Net</h3>
+<span class="text-primary font-black text-xl">$25<span class="text-sm text-slate-500 font-normal">/hr</span></span>
+</div>
+<p class="text-slate-500 text-sm mb-4">Spin bowling friendly pitch with high rebound netting.</p>
+<button class="w-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white py-2.5 rounded-xl font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+                                    Quick Book
+                                    <span class="material-symbols-outlined text-lg">bolt</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Statistics / Quick Stats Row -->
+<div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-primary/5 dark:bg-primary/10 p-6 rounded-2xl border border-primary/20 flex items-center gap-4">
+<div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Daily Revenue</p>
+<p class="text-2xl font-black text-slate-900 dark:text-white">$1,420.00</p>
+</div>
+</div>
+<div class="bg-blue-500/5 dark:bg-blue-500/10 p-6 rounded-2xl border border-blue-500/20 flex items-center gap-4">
+<div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined">group</span>
+</div>
+<div>
+<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Total Bookings</p>
+<p class="text-2xl font-black text-slate-900 dark:text-white">48 Slots</p>
+</div>
+</div>
+<div class="bg-emerald-500/5 dark:bg-emerald-500/10 p-6 rounded-2xl border border-emerald-500/20 flex items-center gap-4">
+<div class="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Peak Hours</p>
+<p class="text-2xl font-black text-slate-900 dark:text-white">6 PM - 10 PM</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

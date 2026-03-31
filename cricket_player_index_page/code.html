@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CricTurf | Book Premium Cricket Turfs Near You</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#351000",
+              "on-secondary": "#ffffff",
+              "on-surface": "#191c1d",
+              "on-tertiary": "#ffffff",
+              "on-primary-container": "#572000",
+              "primary-fixed": "#ffdbcc",
+              "surface-variant": "#e1e3e4",
+              "on-surface-variant": "#5a4136",
+              "on-tertiary-container": "#003357",
+              "on-secondary-container": "#3f6d38",
+              "error": "#ba1a1a",
+              "on-secondary-fixed": "#002201",
+              "tertiary": "#0062a1",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#059eff",
+              "outline": "#8e7164",
+              "primary-container": "#ff6b00",
+              "tertiary-fixed": "#d0e4ff",
+              "error-container": "#ffdad6",
+              "on-background": "#191c1d",
+              "on-tertiary-fixed-variant": "#00497b",
+              "secondary-fixed-dim": "#a1d494",
+              "on-error-container": "#93000a",
+              "surface": "#f8f9fa",
+              "background": "#f8f9fa",
+              "on-primary-fixed-variant": "#7a3000",
+              "on-secondary-fixed-variant": "#23501e",
+              "surface-container-high": "#e7e8e9",
+              "inverse-surface": "#2e3132",
+              "surface-dim": "#d9dadb",
+              "secondary-fixed": "#bcf0ae",
+              "tertiary-fixed-dim": "#9ccaff",
+              "surface-tint": "#a04100",
+              "surface-container": "#edeeef",
+              "primary": "#a04100",
+              "primary-fixed-dim": "#ffb693",
+              "on-primary": "#ffffff",
+              "surface-bright": "#f8f9fa",
+              "secondary-container": "#b9eeab",
+              "secondary": "#3b6934",
+              "surface-container-low": "#f3f4f5",
+              "outline-variant": "#e2bfb0",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-container-highest": "#e1e3e4",
+              "inverse-primary": "#ffb693",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed": "#001d35"
+            },
+            fontFamily: {
+              "headline": ["Lexend"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .kinetic-gradient {
+        background: linear-gradient(135deg, #a04100 0%, #ff6b00 100%);
+      }
+      .shadow-ambient {
+        box-shadow: 0 8px 24px rgba(25, 28, 29, 0.06);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 sticky z-50 bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xl shadow-sm dark:shadow-none transition-all duration-300">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4 w-full font-lexend tracking-tight">
+<div class="flex items-center gap-8">
+<a class="text-2xl font-black italic text-orange-600 dark:text-orange-500 hover:scale-105 transition-transform duration-200" href="#">CricTurf</a>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-orange-600 dark:text-orange-500 font-bold border-b-2 border-orange-600 hover:scale-105 transition-transform duration-200" href="#">Venues</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-orange-500 hover:scale-105 transition-transform duration-200" href="#">Leagues</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-orange-500 hover:scale-105 transition-transform duration-200" href="#">Coaching</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-orange-500 hover:scale-105 transition-transform duration-200" href="#">Membership</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-5 py-2 text-zinc-600 dark:text-zinc-400 font-medium hover:text-orange-500 transition-colors">Login</button>
+<button class="px-6 py-2 kinetic-gradient text-white font-bold rounded-full hover:scale-105 active:opacity-80 active:scale-95 transition-all shadow-md">Register</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative overflow-hidden bg-surface pb-20 pt-10 md:pt-16 lg:pb-32">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 z-10">
+<span class="inline-block text-secondary font-bold text-sm tracking-widest mb-4 uppercase">Find Your Perfect Pitch</span>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.05] text-on-surface mb-8">
+                    The Ultimate <span class="text-primary italic">Playing Experience</span> for Every Cricketer
+                </h1>
+<p class="text-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+                    Book world-class indoor and outdoor arenas equipped with premium amenities. From 5-a-side nets to full-sized grounds, we have it all.
+                </p>
+<!-- Search Bar Shell -->
+<div class="bg-surface-container-low p-2 rounded-2xl flex flex-col md:flex-row gap-2 shadow-ambient max-w-2xl border border-outline-variant/20">
+<div class="flex-1 flex items-center px-4 gap-3 bg-surface-container-lowest rounded-xl py-3">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-zinc-400 font-medium" placeholder="Enter your city or area" type="text"/>
+</div>
+<div class="flex-1 flex items-center px-4 gap-3 bg-surface-container-lowest rounded-xl py-3">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-zinc-400 font-medium" placeholder="Select Date" type="text"/>
+</div>
+<button class="kinetic-gradient text-white font-bold px-8 py-4 rounded-xl flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 transition-all">
+<span>Search</span>
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl">
+<img alt="Professional Cricket Player" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBQDtcSbdgWpGT-xIRGOzLDG2-zWnBn6ZBmagRmgkRsTgr5GeQEhOLOxflsUp75vjGFJGsoWOlSRf6zwcLc13XkWe4pUWp86dWw4hzLVUf0ISDhBlLWveZYRerBaptsm25HMDmul8lXsyEKyTy0EMIS4Jq-eWqkNbr2De9QtPon53y2HBJ2LN45tCwZV-9KcnZ9R-1yWxzx-682syTCEwQvd1MXabI3Fey2No7A74oH72i8F2QvdDlfcV3lA3NnezbYVd1swwFvHES"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 p-6 glass-nav rounded-2xl border border-white/20">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full kinetic-gradient flex items-center justify-center text-white">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<div>
+<p class="text-white font-bold text-lg">5,000+ Teams Active</p>
+<p class="text-white/80 text-sm">Join the largest cricket network</p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute -z-10 -bottom-10 -right-10 w-64 h-64 bg-secondary-fixed opacity-30 rounded-full blur-[100px]"></div>
+</div>
+</div>
+</header>
+<!-- Player Features Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<span class="text-secondary font-bold text-xs tracking-[0.3em] uppercase mb-4 block">Engineered for Players</span>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold text-on-surface">Premium Arena Amenities</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+<!-- Floodlights -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/10 text-center hover:shadow-md transition-all">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+<span class="material-symbols-outlined text-3xl">lightbulb</span>
+</div>
+<h3 class="font-bold mb-2">Pro Floodlights</h3>
+<p class="text-sm text-on-surface-variant">Daylight-quality lighting for night matches without shadows.</p>
+</div>
+<!-- Dugout -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/10 text-center hover:shadow-md transition-all">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+<span class="material-symbols-outlined text-3xl">deck</span>
+</div>
+<h3 class="font-bold mb-2">Comfortable Dugouts</h3>
+<p class="text-sm text-on-surface-variant">Spacious team seating and gear storage at every pitch side.</p>
+</div>
+<!-- Change Rooms -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/10 text-center hover:shadow-md transition-all">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+<span class="material-symbols-outlined text-3xl">checkroom</span>
+</div>
+<h3 class="font-bold mb-2">Changing Rooms</h3>
+<p class="text-sm text-on-surface-variant">Private locker rooms with clean showers and drying areas.</p>
+</div>
+<!-- Refreshments -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/10 text-center hover:shadow-md transition-all">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+<span class="material-symbols-outlined text-3xl">local_cafe</span>
+</div>
+<h3 class="font-bold mb-2">Refreshments</h3>
+<p class="text-sm text-on-surface-variant">On-site sports drinks, water stations, and healthy snacks.</p>
+</div>
+<!-- Turf Quality -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/10 text-center hover:shadow-md transition-all">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+<span class="material-symbols-outlined text-3xl">grass</span>
+</div>
+<h3 class="font-bold mb-2">Hybrid Turf</h3>
+<p class="text-sm text-on-surface-variant">Choice of premium synthetic mats or natural curated grass.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Top Rated Arenas Section -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<span class="text-secondary font-bold text-sm tracking-widest mb-2 uppercase">Explore Local Grounds</span>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold text-on-surface">Top Rated Arenas</h2>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 bg-surface-container-high text-on-surface font-semibold rounded-full hover:bg-primary-container transition-colors">Filters</button>
+<a class="px-8 py-3 border-2 border-primary text-primary font-bold rounded-full hover:bg-primary hover:text-white transition-all" href="#">View All Venues</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Card 1: Indoor Nets -->
+<div class="group bg-surface-container-low rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-500">
+<div class="relative h-56 overflow-hidden">
+<img alt="Indoor Nets" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi5Rs7jvuEhLvVL-owhX76vOd64trZChOMJ6zls12omQBrLkt9NsAaGyXl4J-LrKqnkGygYaZ9X2VCV-Epbuc4NkGpBVnoZCCZuZpTjYq8S4njcByqXte0lqcns6e6bF8_x2aV_osW57U3Hzn_6DSGiftvMdTzgtZwAXLx76ARfKWWyzYB0Q6Inq_w7vVmWZCpFVdismHik7YWuSWbOjiYMDVViB6OFQC3cEMN9p43ZaL37IW8QpIWPmn2Rn4lmHjOMZt8sqdI8QDu"/>
+<div class="absolute top-4 left-4">
+<span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest">Indoor • 3 Lane</span>
+</div>
+<div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-primary font-bold text-sm">$25/hr</div>
+</div>
+<div class="p-6">
+<h3 class="font-bold text-lg mb-1 group-hover:text-primary transition-colors">Elite Indoor Pavilion</h3>
+<p class="text-on-surface-variant text-xs flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span> Canary Wharf
+                        </p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-orange-500">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface font-bold text-sm">4.9</span>
+</div>
+<span class="text-xs text-on-surface-variant">5-a-side size</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Full Ground -->
+<div class="group bg-surface-container-low rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-500">
+<div class="relative h-56 overflow-hidden">
+<img alt="Full Ground" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_aJzw8HqBuS-bmp1d7R7wSQJuRZ5CrbC1x2Gb8SDZERtIWdr2Htnbt5Ou0fsGFx6OtbV-ln1rrXszEiCYWExzXOD37fblmOJmHknL-dkABjLo4sqhWETEuM-Uoe7IlTN0ZpryZVl_-Ujs-8mGeXwhiDeoDcJ1De0gIypEcwvQo3UU53S0uWthJQVwV1kwLT0nmYf_E0Ws_njBkNtr4oOSauANsjiIDcYd4REvAe2xMwaUYlPtq5h3HgE6zyNbw3eS5R58R1ApZQKc"/>
+<div class="absolute top-4 left-4">
+<span class="bg-green-600 text-white px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest">Outdoor • 11-a-side</span>
+</div>
+<div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-primary font-bold text-sm">$80/hr</div>
+</div>
+<div class="p-6">
+<h3 class="font-bold text-lg mb-1 group-hover:text-primary transition-colors">Legacy Oval Park</h3>
+<p class="text-on-surface-variant text-xs flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span> West London
+                        </p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-orange-500">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface font-bold text-sm">4.8</span>
+</div>
+<span class="text-xs text-on-surface-variant">Natural Grass</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Rooftop Turf -->
+<div class="group bg-surface-container-low rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-500">
+<div class="relative h-56 overflow-hidden">
+<img alt="Rooftop Turf" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDugqX0t5qP43fWrV2723D3V5pvmIBu4sAvVsUmbz86MbYMbUtpD4UKP57fJq6o1Hw8I-M_n_hg0o-XpUd5OKBJ1DMa4rJUO39j6qQrLv_a6yznbWzx-_tQqygmXLkbv6QrLA2oLdcYhEWWM_BksU63_L0IMu8KNRb3Vu8kh1vpHLYGP-joxOOekS2rJbmafOdwhih43Lnk3Vl9nsC4nqUnMBk-WJ2Kgg3fKxSZNvhmzM0n9WATzwwxlQ9i3jrhE-3ddqENGZvbX0Ha"/>
+<div class="absolute top-4 left-4">
+<span class="bg-orange-600 text-white px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest">Rooftop • 7-a-side</span>
+</div>
+<div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-primary font-bold text-sm">$45/hr</div>
+</div>
+<div class="p-6">
+<h3 class="font-bold text-lg mb-1 group-hover:text-primary transition-colors">Skyline Sports Roof</h3>
+<p class="text-on-surface-variant text-xs flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span> Downtown Hub
+                        </p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-orange-500">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface font-bold text-sm">4.7</span>
+</div>
+<span class="text-xs text-on-surface-variant">Synthetic Turf</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Community Net -->
+<div class="group bg-surface-container-low rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-500">
+<div class="relative h-56 overflow-hidden">
+<img alt="Community Net" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfH2DYCX2cK6X-qElVeUD0QyBJ0PmuYDetX6HXqbQ3PrarrqDy0gLg90V539A-Ee7unz4YGXM9t7rzFRCQC45DuyW1P5coljOvfrS_n1yK5JYILcq84NZKwvRd1BFbpXxqsLr0Jr_noNIKxaHGGkQhxR40GoxfulJMWIoDUyImF5v6xNeuK6KNAs0VXURFUbH9VZZ7r9Ca_sLdCfeqts0Yf5ZMUf9c_7WdUfkUr8prE0mKLiYAcUG1Vr3R3cjo0uDwytd9cECURxen"/>
+<div class="absolute top-4 left-4">
+<span class="bg-zinc-700 text-white px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest">Training • Singles</span>
+</div>
+<div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-primary font-bold text-sm">$15/hr</div>
+</div>
+<div class="p-6">
+<h3 class="font-bold text-lg mb-1 group-hover:text-primary transition-colors">Quick Nets Center</h3>
+<p class="text-on-surface-variant text-xs flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span> East Village
+                        </p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-orange-500">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface font-bold text-sm">4.5</span>
+</div>
+<span class="text-xs text-on-surface-variant">Self-Service</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Reviews & Testimonials Section -->
+<section class="py-24 bg-surface-container-high relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+<div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary-container/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary-container/20 rounded-full blur-[120px]"></div>
+</div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="text-center mb-20">
+<span class="text-secondary font-bold text-sm tracking-widest mb-4 uppercase block">The CricTurf Community</span>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold text-on-surface mb-6">Trusted by 10,000+ Players</h2>
+<button class="px-8 py-3 kinetic-gradient text-white font-bold rounded-full shadow-lg hover:scale-105 transition-transform">Write a Review</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-white dark:bg-zinc-900 p-8 rounded-[2rem] shadow-ambient border border-outline-variant/10">
+<div class="flex gap-1 text-orange-500 mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"The booking process is incredibly smooth. I used to spend hours calling different turfs, but now I can secure a pitch in under 30 seconds. The facilities at the Sky Dome are world-class."</p>
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4">
+<img alt="James Wilson" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHmEErW8AnDMRM5LDFkTPihaJwZNWkNtUFrYRw_ThQlIESByuUPU-siC9dqivb77c600L8Hs53YXX5lRgjIn6KEILQZ5EJVx2UlKrwNZowFLkbjQ3eEbnvC5uFnwBAZ3dGXQWcFGhNKj0UqxZbUm6DagXMUjX9xbsfy-5Ib74Ea1jYlMSiByR200szf28XYkg9C30KKUEyzkvIPst9ZXSCTyNgktPQ094MH-BeyESwD8tHZ3eqXMwm0Xqcb3qtDvdnu5M9FRQTVvpg"/>
+<div>
+<p class="font-bold text-on-surface">James Wilson</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-tighter">Wandsworth Strikers</p>
+</div>
+</div>
+</div>
+<img alt="Team Photo" class="w-full h-40 object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHTB-y8UhDX3WFHGV1CVI7PnzyiikHg17nHJJe5PE67Ge6eQuasF6RgQuL_1BtnDVintpAzRoGvoLcwGdiR3VpQnNe_wHs1uzeNQXaJryyoolBc_fA0zOvHE0bECWjwwZV_pMH9cyTsi5AXwJcCeLsgak97TL9iW3I-_sDd8urKuRM1tOc5801QXVm_HJ7ouMIJNF2uaM43QuEIFJonfiOOReyLNXRTpMCT8y7l-DJcwAelwMKJkovzTX-bgYyYK05CC5Hbm-vpNkN"/>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white dark:bg-zinc-900 p-8 rounded-[2rem] shadow-ambient border border-outline-variant/10">
+<div class="flex gap-1 text-orange-500 mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"Best turf management app I've used. We play every Friday night and the floodlights at Legacy Grounds are amazing. The showers are always clean which is a huge plus."</p>
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4">
+<img alt="Sarah Ahmed" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjjTXgtr2CmIrSotkfcj1bTawDuIK6ZnHJt0FfZe2_5aGTi9yFe8Ni7KBqEIicWvKKw484eCymZbGsGf3nxKS5IuXUXkuKg6ACFbk2nJM25CFCHxKt_PsyeY8mjk050nZStVZirkRgc2FjOdIIFEopA6Ot8u7nzsKZtpH_OkzWPxKUoZi2z0O4_Srmt-u6j4oLxcTw4HHJjVWpnVvTjD_xdTOOGOh2DAsLjhjGL8ls0MaD5MGkeSgN7bLD2LtXA5GIKTJuKeMxr9hn"/>
+<div>
+<p class="font-bold text-on-surface">Sarah Ahmed</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-tighter">City Cricketers</p>
+</div>
+</div>
+</div>
+<img alt="Team Training" class="w-full h-40 object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCl2ES7aU1DbGW87pXhFHrcv-NCZVGhqPiMCQZrhqrHPiqx0EUNGQwcF2NesKPbUcifYZbNN_ox2UDN7Wo1Fk_7FPQp6XjsLJck_QC73abSokcUmCeS-YMzN_A3Z5WkFRnfO5TkZhx_9wn--BVaT9WsyqF3AKqtnsC7WFvaIJTptjml0eXvnwPES552agHwUmj9U6vi9PeRmVTnl_SJ8sBnfSL-i5ssPw2KXtDqWAHJVDjV3GxE1kdS-1h4HoScLxFgRZsXwrpHoMo"/>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white dark:bg-zinc-900 p-8 rounded-[2rem] shadow-ambient border border-outline-variant/10">
+<div class="flex gap-1 text-orange-500 mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"Found a local indoor net for some late-night practice using CricTurf. The quality of the synthetic matting is perfect for batting drills. Highly recommend!"</p>
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4">
+<img alt="David Chen" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtkeUm7V7qydFTIal1m416q4JXFuDqBAiCqrAJGwuJnXn2fqYa9Lkr4bUE-cgBdtaWdYIzwL7Wc6-ghC_DAZNb22iCaojpNwMqDGUkhbmqchQs4_O4UbfoZTXYudSMHfZTspU-9bE5fAnAXZ20v_EMvZbCBmBKfpw0umwV3bODN8cxVbA2K0Atu8qsP6paGmgxjE5rVLIItESXZfqHfdlWcXSkxRNgRlO-QHoBf9_UCPZFc_mq2qeZHQhhGNSPYp6tgwa_Btb_2RbN"/>
+<div>
+<p class="font-bold text-on-surface">David Chen</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-tighter">Amateur Pro</p>
+</div>
+</div>
+</div>
+<div class="w-full h-40 bg-zinc-100 dark:bg-zinc-800 rounded-xl flex items-center justify-center text-on-surface-variant italic text-sm">
+<span>No photo attached</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-20 bg-primary">
+<div class="max-w-4xl mx-auto px-6 text-center text-white">
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-8">Ready to Take the Field?</h2>
+<p class="text-xl mb-10 text-white/90">Join thousands of players already booking their matches through CricTurf.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="px-10 py-4 bg-white text-primary font-black rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all text-lg">Register for Free</button>
+<button class="px-10 py-4 border-2 border-white text-white font-black rounded-full hover:bg-white/10 active:scale-95 transition-all text-lg">Browse Venues</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="full-width bg-zinc-50 dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800">
+<div class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6 font-lexend text-sm">
+<div class="flex flex-col gap-2">
+<p class="text-xl font-bold text-zinc-900 dark:text-zinc-100">CricTurf</p>
+<p class="text-zinc-500 dark:text-zinc-400">© 2024 CricTurf Kinetic Arena. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-orange-500 transition-colors" href="#">About Us</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-orange-500 transition-colors" href="#">Partner With Us</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-orange-500 transition-colors" href="#">Privacy Policy</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-orange-500 transition-colors" href="#">Terms of Service</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-orange-500 transition-colors" href="#">Support</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:bg-orange-600 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:bg-orange-600 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+</div>
+</div>
+</footer>
+</body></html>

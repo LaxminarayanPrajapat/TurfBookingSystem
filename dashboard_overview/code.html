@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CricTurf Booking Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="flex min-h-screen flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-6 md:px-12 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">sports_cricket</span>
+<h2 class="text-xl font-extrabold tracking-tight uppercase italic">CricTurf</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-semibold transition-colors" href="#">Home</a>
+<a class="text-slate-900 dark:text-slate-100 border-b-2 border-primary text-sm font-semibold" href="#">Turfs</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-semibold transition-colors" href="#">Coaching</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-semibold transition-colors" href="#">Tournaments</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<label class="hidden sm:flex items-center bg-slate-100 dark:bg-slate-800 rounded-xl px-3 py-2 w-64 border border-transparent focus-within:border-primary transition-all">
+<span class="material-symbols-outlined text-slate-500">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-slate-500" placeholder="Search for nearby turfs..." type="text"/>
+</label>
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined p-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full">notifications</button>
+<div class="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-white font-bold" data-alt="User profile avatar">JS</div>
+</div>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- Sidebar Navigation -->
+<aside class="hidden lg:flex flex-col w-72 bg-white dark:bg-background-dark border-r border-slate-200 dark:border-slate-800 p-6 space-y-8 h-[calc(100vh-73px)] sticky top-[73px]">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<div class="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<h3 class="text-sm font-bold">Jason Statham</h3>
+<p class="text-xs text-slate-500 font-medium">Pro Member</p>
+</div>
+</div>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary text-white font-bold" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold" href="#">
+<span class="material-symbols-outlined">event_available</span>
+<span>My Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span>Payments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span>Favorites</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</div>
+</div>
+<div class="mt-auto bg-primary/10 p-4 rounded-xl border border-primary/20">
+<p class="text-xs font-bold text-primary uppercase tracking-wider mb-2">Membership</p>
+<p class="text-sm font-semibold mb-4">You have 5 complimentary sessions left.</p>
+<button class="w-full bg-primary text-white py-2 rounded-lg text-xs font-bold uppercase">Upgrade Now</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 p-6 md:p-10 space-y-10 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="relative rounded-3xl overflow-hidden bg-background-dark h-64 flex items-center p-8 group">
+<div class="absolute inset-0 bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="Lush green cricket stadium at night" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAxnhl8YxrWu4HiUqQeLiruQFruK60z47RyBoLSZsLOb-yHjWGhSfFovIhw7YTyPvk0tGbWflYrhnsBcrPDCUukwfr2I597OC6NDm_PyTJCCPuFstWmjsm_360uaZVg4p3fdLrpB7Jdi3NpnB0LOXo397x2AlD0AXyHfk_gHdjKt4kT6_MbB8iHu9tsJJd9GyjVXc1vSTeDLIBVoWvJs5tDM5hF5FAuWE8zCKjKhfoOq_rIxhSUkFMYzuph-VOBPtq3lcoY8tkDO2_T');"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/80 to-transparent"></div>
+<div class="relative z-10 max-w-lg">
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest mb-4 inline-block">Flash Sale</span>
+<h1 class="text-4xl font-extrabold text-white mb-4 leading-tight">Book Your Perfect Pitch Today!</h1>
+<p class="text-slate-300 text-sm mb-6">Enjoy 20% off on all morning sessions this weekend. Find the best turfs near you.</p>
+<button class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-xl flex items-center gap-2 transition-all">
+<span>Book Quick Match</span>
+<span class="material-symbols-outlined text-sm">bolt</span>
+</button>
+</div>
+</section>
+<!-- Upcoming Matches Section -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+                        Upcoming Matches
+                    </h2>
+<a class="text-primary text-sm font-bold hover:underline" href="#">View All</a>
+</div>
+<div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-800/50">
+<tr>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Turf Name</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Date</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Time</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-green-500/10 flex items-center justify-center text-green-500">
+<span class="material-symbols-outlined">stadium</span>
+</div>
+<span class="font-bold text-sm">Lords International Arena</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-slate-600 dark:text-slate-400 italic">Oct 24, 2023</td>
+<td class="px-6 py-4 text-sm font-medium text-slate-600 dark:text-slate-400">06:00 PM - 08:00 PM</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-green-100 dark:bg-green-500/20 text-green-600 dark:text-green-400 text-[10px] font-bold uppercase rounded-full">Confirmed</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">stadium</span>
+</div>
+<span class="font-bold text-sm">Green Field Pitch 4</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-slate-600 dark:text-slate-400 italic">Oct 28, 2023</td>
+<td class="px-6 py-4 text-sm font-medium text-slate-600 dark:text-slate-400">08:00 AM - 10:00 AM</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-amber-100 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 text-[10px] font-bold uppercase rounded-full">Pending</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Featured Turfs Grid -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">stars</span>
+                        Featured Turfs
+                    </h2>
+<div class="flex gap-2">
+<button class="p-2 border border-slate-200 dark:border-slate-800 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 border border-slate-200 dark:border-slate-800 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-white dark:bg-background-dark rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden group">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Artificial grass cricket pitch under lights" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaurkF49A0qCslAUynElh06x5ef9pHE1x3sUvSikLXTLIud9iBfkx0uDuvhF-fT-D8GVHW2RIINMZJBORMbRDb4GLv-Qg0TqOv9vhXxLln9l3dD3OOlmw6GxQHC5BWn4Z9qWmw3Mg2VvfRYgiF0A5vb9Y5ITItWl7VaRLSYFbdijLoxJ5Svfkt7diaUtQYhdOsyT1jWNaVxA7jVsGdpfllk-YX5km3hgJ3Fe6QuROQ2N51--8Ee3KwWVih2C-8VEUWqKW45i3VRV3h');"></div>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-background-dark/90 px-2 py-1 rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-400 text-xs fill-1">star</span>
+<span class="text-xs font-bold">4.8</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg">Skyline Premium Turf</h3>
+<p class="text-primary font-bold">$25<span class="text-xs text-slate-500 font-normal">/hr</span></p>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-xs mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Downtown Sports Complex, NY</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-[10px] font-bold px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded uppercase">Night Lights</span>
+<span class="text-[10px] font-bold px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded uppercase">Shower Room</span>
+<span class="text-[10px] font-bold px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded uppercase">Cafeteria</span>
+</div>
+<button class="w-full py-3 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-bold rounded-xl hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all">Book Now</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white dark:bg-background-dark rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden group">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Indoor modern sports facility with turf" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAP_xv4BAwTypeelyWrSwdEvO_59rvzjiWYVyw4xaW0V0M8s3621dtJQvQA9vQ6kFcpVmUfoPoP9rwlfNBx2iULjf9pWLqjlmwWr_8qFzNIsTa0tD-lAbIPQV8YXtXhPYbCZzK_SNa-JF6F5Dti_xxxYY2dLUzdVNRNLpye_iuXZ3_IaJkfV2d-SbVcFr0aGWOhJKVJ9fYB0ZWWmFKi4utTmeYEsf2mcVRxKq69h8bhzpYvU7_qMImPnD8mn0zNN0K5T0vZ09Ej1MrV');"></div>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-background-dark/90 px-2 py-1 rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-400 text-xs fill-1">star</span>
+<span class="text-xs font-bold">4.9</span>
+</div>
+<span class="absolute bottom-3 left-3 px-2 py-1 bg-primary text-white text-[10px] font-bold rounded">TOP RATED</span>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg">Green Dome Indoors</h3>
+<p class="text-primary font-bold">$30<span class="text-xs text-slate-500 font-normal">/hr</span></p>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-xs mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>East Side Plaza, NY</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-[10px] font-bold px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded uppercase">AC Controlled</span>
+<span class="text-[10px] font-bold px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded uppercase">Bowling Machine</span>
+</div>
+<button class="w-full py-3 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-bold rounded-xl hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all">Book Now</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white dark:bg-background-dark rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden group">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="High quality sports turf texture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAl7kjaGDLpIStkghVjJRMeFFYIqJSQ1D15-mp-dvtWnZkUecVm-9yNRYzHVK4tKzhaxUKkf0ZDkHFOGATud5yGdLF-ObYL9fGKNq4tKIu5gEb5MRK_TUbsBi-I_R-oTXfQsnz56kgfEvzL2_cW1zPVoRhcnGo8cFMJHQriV3POw2XCAr1kjBi6UqiPUj28nPEpfhKUaZuS6bhEQFsRyJOSKPPVffWRts0YYBCsywZ3vLDRqBy7MPGsLAyVcxt6Y97NaSqy3ANnMBNt');"></div>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-background-dark/90 px-2 py-1 rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-400 text-xs fill-1">star</span>
+<span class="text-xs font-bold">4.7</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg">Central Park Cricket</h3>
+<p class="text-primary font-bold">$20<span class="text-xs text-slate-500 font-normal">/hr</span></p>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-xs mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Central Park South, NY</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-[10px] font-bold px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded uppercase">Open Air</span>
+<span class="text-[10px] font-bold px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded uppercase">Pro Netting</span>
+</div>
+<button class="w-full py-3 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-bold rounded-xl hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all">Book Now</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Footer Summary Bar (Responsive Mobile Only) -->
+<div class="lg:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 flex justify-around p-3 z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[10px] font-bold">Explore</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">event_available</span>
+<span class="text-[10px] font-bold">Bookings</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</button>
+</div>
+</div>
+</body></html>

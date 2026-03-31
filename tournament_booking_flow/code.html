@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cricket Tournament Booking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 lg:px-20 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">sports_cricket</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">CricArena</h2>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors hover:bg-primary/10 hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors hover:bg-primary/10 hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">account_circle</span>
+</button>
+</div>
+</header>
+<main class="flex-1 max-w-7xl mx-auto w-full px-6 py-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Left Column: Form Details -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<div>
+<h1 class="text-4xl font-black text-slate-900 dark:text-white mb-2">Tournament Booking</h1>
+<p class="text-slate-500 dark:text-slate-400">Organize your cricket event with professional-grade facilities.</p>
+</div>
+<!-- Section: Tournament Info -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800">
+<h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">info</span> Tournament Details
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<label class="flex flex-col gap-2">
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Tournament Name</span>
+<input class="form-input rounded-xl border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:border-primary focus:ring-primary w-full p-4 transition-all" placeholder="e.g. Winter Champions Trophy" type="text"/>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Number of Participating Teams</span>
+<input class="form-input rounded-xl border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:border-primary focus:ring-primary w-full p-4 transition-all" placeholder="e.g. 12" type="number"/>
+</label>
+</div>
+</div>
+<!-- Section: Tournament Type -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800">
+<h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">category</span> Tournament Format
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="relative cursor-pointer border-2 border-primary bg-primary/5 rounded-xl p-4 flex items-center gap-4 group">
+<span class="material-symbols-outlined text-primary text-3xl">calendar_today</span>
+<div class="flex-1">
+<p class="font-bold text-slate-900 dark:text-white">Single Day</p>
+<p class="text-xs text-slate-500">Knockout / 1-Day Carnival</p>
+</div>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+<div class="relative cursor-pointer border-2 border-slate-200 dark:border-slate-700 bg-transparent rounded-xl p-4 flex items-center gap-4 hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-slate-400 text-3xl">event_repeat</span>
+<div class="flex-1">
+<p class="font-bold text-slate-900 dark:text-white">Multi-Day League</p>
+<p class="text-xs text-slate-500">Group stages and playoffs</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Scheduling -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800">
+<h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">schedule</span> Date &amp; Time Slots
+                    </h3>
+<div class="flex flex-col gap-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<label class="flex flex-col gap-2 md:col-span-2">
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Start Date</span>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">calendar_month</span>
+<input class="form-input pl-12 rounded-xl border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:border-primary focus:ring-primary w-full p-4" type="date"/>
+</div>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Days Reserved</span>
+<select class="form-select rounded-xl border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:border-primary focus:ring-primary w-full p-4">
+<option>1 Day</option>
+<option>2 Days</option>
+<option>3 Days</option>
+<option>5 Days</option>
+</select>
+</label>
+</div>
+<div class="space-y-4">
+<p class="text-sm font-semibold text-slate-700 dark:text-slate-300">Available Time Slots (Daily)</p>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full border border-primary bg-primary text-white text-sm font-medium">06:00 AM - 12:00 PM</button>
+<button class="px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-sm font-medium hover:border-primary hover:text-primary transition-colors">12:00 PM - 06:00 PM</button>
+<button class="px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-sm font-medium hover:border-primary hover:text-primary transition-colors">06:00 PM - 12:00 AM</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Price Breakdown & CTA -->
+<div class="lg:col-span-4">
+<div class="sticky top-28 flex flex-col gap-6">
+<div class="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+<div class="p-6 bg-primary text-white">
+<h3 class="text-xl font-bold">Booking Summary</h3>
+<p class="text-primary/10 text-xs mt-1">Review your tournament costs</p>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-800">
+<span class="text-slate-500 dark:text-slate-400">Base Rent (Ground)</span>
+<span class="font-semibold">$450.00</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-800">
+<span class="text-slate-500 dark:text-slate-400">Tournament Fee</span>
+<span class="font-semibold">$120.00</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-800">
+<span class="text-slate-500 dark:text-slate-400">Umpire &amp; Ball Service</span>
+<span class="font-semibold">$80.00</span>
+</div>
+<div class="flex justify-between items-center py-2 text-green-600 dark:text-green-400 font-medium">
+<span>Multi-day Discount (5%)</span>
+<span>-$32.50</span>
+</div>
+<div class="pt-6 mt-2">
+<div class="flex justify-between items-baseline mb-6">
+<span class="text-lg font-bold">Total Amount</span>
+<span class="text-3xl font-black text-primary">$617.50</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/30 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">payments</span>
+                                    Prepay &amp; Confirm
+                                </button>
+<p class="text-center text-[10px] text-slate-400 dark:text-slate-500 mt-4 px-4">
+                                    By clicking "Prepay &amp; Confirm", you agree to our Tournament Booking Terms and Ground Regulations.
+                                </p>
+</div>
+</div>
+</div>
+<!-- Additional Support -->
+<div class="bg-primary/5 border border-primary/20 p-5 rounded-2xl">
+<div class="flex gap-4 items-start">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">help_outline</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">Need help?</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Our booking managers are available 24/7 for customization.</p>
+<button class="text-primary text-sm font-bold mt-2 hover:underline">Contact Support</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-12 py-12 px-6 lg:px-20">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-6 bg-primary/20 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">sports_cricket</span>
+</div>
+<span class="text-slate-900 dark:text-white font-bold">CricArena Booking</span>
+</div>
+<div class="flex gap-8 text-sm text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Safety Rules</a>
+<a class="hover:text-primary transition-colors" href="#">Cancellation Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Ground Locations</a>
+</div>
+<div class="flex gap-4">
+<div class="bg-slate-100 dark:bg-slate-800 p-2 rounded-lg text-slate-500 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800 p-2 rounded-lg text-slate-500 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto text-center mt-10 pt-8 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-400">
+            © 2024 CricArena Management Group. All rights reserved.
+        </div>
+</footer>
+</div>
+</body></html>

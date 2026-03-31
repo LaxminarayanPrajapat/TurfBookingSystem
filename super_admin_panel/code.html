@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CricketTurf - Super Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .material-symbols-outlined { font-size: 24px; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-200">
+<div class="flex h-screen overflow-hidden">
+<!-- Side Navigation -->
+<aside class="w-72 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="size-10 rounded-xl bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">sports_cricket</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-none">CricketTurf</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400">Super Admin Panel</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary/10 text-primary font-semibold" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm">Owner Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="text-sm">Financial Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm">Platform Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="text-sm">Support Tickets</span>
+<span class="ml-auto bg-primary text-white text-[10px] px-1.5 py-0.5 rounded-full">4</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/50">
+<div class="size-10 rounded-full bg-slate-300 dark:bg-slate-700 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Admin user profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxMhupJUJAb7J801sFepgwsoaCRE2-vN8vuLv2y4mltZJqH_LRb5kq_pJyvHklAsqJ3cnMsSJw_wuCK7-o4G_qTzRhCurOW-uIjDieFYl0eeeKxe3mnhW8E6h17w4VzRtFCQr12L-CI_rUgRhcxgm--2vxVoApYxI9hAWcUeCC7azPqV5G57U1mvNbZLKZB5Rx4n6aNMv4wkSCNHjbgbJDhAck51xYt3Wyyps4_4heYC-joJ-FO9T_fsnIwlsDyPiB3XwtYdraGwM6"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold truncate">Alex Rivera</p>
+<p class="text-xs text-slate-500 truncate">Super Admin</p>
+</div>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+<span class="material-symbols-outlined text-xl">logout</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- Top Header -->
+<header class="h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-8">
+<div class="flex items-center gap-4">
+<h2 class="text-xl font-bold">Platform Overview</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">add</span>
+                        New Owner
+                    </button>
+</div>
+</header>
+<!-- Scrollable Area -->
+<div class="flex-1 overflow-y-auto p-8 space-y-8">
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-lg">
+<span class="material-symbols-outlined">payments</span>
+</span>
+<span class="text-xs font-medium text-emerald-600 flex items-center">+12.5% <span class="material-symbols-outlined text-sm">trending_up</span></span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Revenue</p>
+<p class="text-2xl font-bold mt-1 text-slate-900 dark:text-slate-50">$452,000</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-primary/10 text-primary rounded-lg">
+<span class="material-symbols-outlined">groups</span>
+</span>
+<span class="text-xs font-medium text-emerald-600 flex items-center">+3.2% <span class="material-symbols-outlined text-sm">trending_up</span></span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Active Owners</p>
+<p class="text-2xl font-bold mt-1 text-slate-900 dark:text-slate-50">128</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-lg">
+<span class="material-symbols-outlined">calendar_today</span>
+</span>
+<span class="text-xs font-medium text-emerald-600 flex items-center">+8.1% <span class="material-symbols-outlined text-sm">trending_up</span></span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Bookings</p>
+<p class="text-2xl font-bold mt-1 text-slate-900 dark:text-slate-50">14,250</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-orange-100 dark:bg-orange-900/30 text-orange-600 rounded-lg">
+<span class="material-symbols-outlined">pending_actions</span>
+</span>
+<span class="text-xs font-medium text-slate-500 flex items-center">Priority <span class="material-symbols-outlined text-sm ml-1">warning</span></span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Pending Approvals</p>
+<p class="text-2xl font-bold mt-1 text-slate-900 dark:text-slate-50">12</p>
+</div>
+</div>
+<!-- Owner Management Table Section -->
+<section class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<h3 class="text-lg font-bold">Owner Management</h3>
+<div class="flex flex-wrap items-center gap-3">
+<div class="relative min-w-72">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 border-none focus:ring-2 focus:ring-primary/20 text-sm" placeholder="Search owners by name or city..." type="text"/>
+</div>
+<div class="relative">
+<select class="appearance-none bg-slate-100 dark:bg-slate-800 border-none rounded-xl py-2 pl-4 pr-10 text-sm focus:ring-2 focus:ring-primary/20">
+<option>All Status</option>
+<option>Active</option>
+<option>Pending</option>
+<option>Suspended</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-lg">expand_more</span>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wider">
+<tr>
+<th class="px-6 py-4 font-semibold">Owner &amp; Turf</th>
+<th class="px-6 py-4 font-semibold">Location</th>
+<th class="px-6 py-4 font-semibold">Status</th>
+<th class="px-6 py-4 font-semibold text-right">Earnings</th>
+<th class="px-6 py-4 font-semibold text-center">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<!-- Table Row 1 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">stadium</span>
+</div>
+<div>
+<p class="font-bold text-sm">John Doe</p>
+<p class="text-xs text-slate-500">Lords Arena Cricket</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-lg">location_on</span>
+                                            Mumbai, MH
+                                        </div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">
+                                            Active
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right font-semibold text-sm">
+                                        $12,450.00
+                                    </td>
+<td class="px-6 py-4">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors" title="View Reports">
+<span class="material-symbols-outlined text-xl">bar_chart</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-red-500 transition-colors" title="Suspend">
+<span class="material-symbols-outlined text-xl">block</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 2 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">stadium</span>
+</div>
+<div>
+<p class="font-bold text-sm">Sarah Jenkins</p>
+<p class="text-xs text-slate-500">Premier Turf Park</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-lg">location_on</span>
+                                            Bangalore, KA
+                                        </div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400">
+                                            Pending Approval
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right font-semibold text-sm">
+                                        $0.00
+                                    </td>
+<td class="px-6 py-4">
+<div class="flex items-center justify-center gap-2">
+<button class="px-3 py-1 bg-emerald-500 text-white rounded-lg text-xs font-medium hover:bg-emerald-600">Approve</button>
+<button class="p-2 text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">stadium</span>
+</div>
+<div>
+<p class="font-bold text-sm">Michael Chen</p>
+<p class="text-xs text-slate-500">Boundary Hills Cricket</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-lg">location_on</span>
+                                            Delhi, DL
+                                        </div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400">
+                                            Suspended
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right font-semibold text-sm">
+                                        $42,800.00
+                                    </td>
+<td class="px-6 py-4">
+<div class="flex items-center justify-center gap-2">
+<button class="px-3 py-1 bg-primary/10 text-primary rounded-lg text-xs font-medium hover:bg-primary/20">Reactivate</button>
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">bar_chart</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 4 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">stadium</span>
+</div>
+<div>
+<p class="font-bold text-sm">Rajesh Kumar</p>
+<p class="text-xs text-slate-500">Green Oval Fields</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-lg">location_on</span>
+                                            Hyderabad, TS
+                                        </div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">
+                                            Active
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right font-semibold text-sm">
+                                        $8,920.00
+                                    </td>
+<td class="px-6 py-4">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">bar_chart</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">block</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<p class="text-xs text-slate-500 dark:text-slate-400">Showing 1 to 4 of 128 owners</p>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-primary/10 text-primary font-bold transition-colors">
+                                1
+                            </button>
+<button class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                                2
+                            </button>
+<button class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bottom Section: Quick Tasks and Activity -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<h3 class="font-bold mb-4">Recent Platform Activity</h3>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="size-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">person_add</span>
+</div>
+<div class="flex-1">
+<p class="text-sm"><strong>David Miller</strong> applied for turf ownership in Pune.</p>
+<p class="text-xs text-slate-500 mt-1">24 minutes ago</p>
+</div>
+<button class="text-primary text-xs font-bold">Review</button>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-8 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+</div>
+<div class="flex-1">
+<p class="text-sm">System auto-approved weekly payout of <strong>$14,200</strong> to 12 vendors.</p>
+<p class="text-xs text-slate-500 mt-1">2 hours ago</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-8 rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">report</span>
+</div>
+<div class="flex-1">
+<p class="text-sm">New high-priority support ticket from <strong>Lords Arena Cricket</strong>.</p>
+<p class="text-xs text-slate-500 mt-1">5 hours ago</p>
+</div>
+<button class="text-primary text-xs font-bold">Open</button>
+</div>
+</div>
+</div>
+<div class="bg-primary/5 dark:bg-primary/10 p-6 rounded-2xl border border-primary/20 flex flex-col justify-between">
+<div>
+<h3 class="font-bold text-primary mb-2">Platform Health</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400">All systems are operational. Average booking response time is 1.2s.</p>
+</div>
+<div class="mt-8">
+<div class="flex items-end justify-between mb-2">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Booking Capacity</span>
+<span class="text-sm font-bold text-primary">84%</span>
+</div>
+<div class="w-full bg-primary/20 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full w-[84%]"></div>
+</div>
+</div>
+<button class="w-full mt-6 py-2.5 bg-primary text-white rounded-xl text-sm font-bold hover:bg-primary/90 transition-transform active:scale-95 shadow-lg shadow-primary/20">
+                            Download Global Report
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
