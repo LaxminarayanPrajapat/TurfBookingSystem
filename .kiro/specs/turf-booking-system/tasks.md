@@ -26,11 +26,11 @@
   - [x] 5.1 Redesign `src/pages/LoginPage.tsx` — KineticArena styling, ActionOrange GradientButton, error toast on invalid credentials
   - [x] 5.2 Redesign `src/pages/RegisterPage.tsx` — KineticArena styling, client-side validation for password length and 10-digit phone, GradientButton
 
-- [ ] 6. Home Page
-  - [ ] 6.1 Redesign `src/pages/HomePage.tsx` — hero section with search bar (location + date inputs, Search GradientButton navigating to `/browse`)
-  - [ ] 6.2 Add features section with 5 amenity cards (CricketGreen icons, surface-low background)
-  - [ ] 6.3 Add "Top Rated Arenas" section with 4 turf cards fetched from TurfStore, each linking to `/turf/{id}`
-  - [ ] 6.4 Add testimonials section (3 review cards), CTA section (ActionOrange background, Browse link), and footer
+- [x] 6. Home Page
+  - [x] 6.1 Redesign `src/pages/HomePage.tsx` — hero section with search bar (location + date inputs, Search GradientButton navigating to `/browse`)
+  - [x] 6.2 Add features section with 5 amenity cards (CricketGreen icons, surface-low background)
+  - [x] 6.3 Add "Top Rated Arenas" section with 4 turf cards fetched from TurfStore, each linking to `/turf/{id}`
+  - [x] 6.4 Add testimonials section (3 review cards), CTA section (ActionOrange background, Browse link), and footer
 
 - [ ] 7. Browse Turfs Page
   - [ ] 7.1 Redesign `src/pages/BrowseTurfsPage.tsx` — fetch turfs from TurfStore on mount, 3-column responsive grid
