@@ -130,6 +130,17 @@ export default function AdminDashboardPage() {
         }
     }
 
+    async function handleDelete(uid: string, name: string) {
+        if (!window.confirm(`Delete account for "${name}"? This cannot be undone.`)) return;
+        try {
+            await authService.deleteUser(uid);
+            setOwners((prev) => prev.filter((o) => o.id !== uid));
+            toast.success('Owner account deleted');
+        } catch (err: any) {
+            toast.error(err.message || 'Failed to delete owner');
+        }
+    }
+
     async function handleLogout() {
         await logout();
         navigate('/');
@@ -295,6 +306,7 @@ export default function AdminDashboardPage() {
                                 setStatusFilter={setStatusFilter}
                                 onSuspend={handleSuspend}
                                 onReactivate={handleReactivate}
+                                onDelete={handleDelete}
                                 totalCount={owners.length}
                             />
 
@@ -338,7 +350,7 @@ function StatCard({
 
 function OwnerManagementSection({
     owners, searchQuery, setSearchQuery, statusFilter, setStatusFilter,
-    onSuspend, onReactivate, totalCount,
+    onSuspend, onReactivate, onDelete, totalCount,
 }: {
     owners: User[];
     searchQuery: string;
@@ -347,6 +359,7 @@ function OwnerManagementSection({
     setStatusFilter: (v: string) => void;
     onSuspend: (uid: string) => void;
     onReactivate: (uid: string) => void;
+    onDelete: (uid: string, name: string) => void;
     totalCount: number;
 }) {
     return (
@@ -355,11 +368,8 @@ function OwnerManagementSection({
             <div className="p-6 border-b border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <h3 className="text-lg font-bold text-on-surface">Owner Management</h3>
                 <div className="flex flex-wrap items-center gap-3">
-                    {/* Search */}
                     <div className="relative min-w-64">
-                        <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">
-                            search
-                        </span>
+                        <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
                         <input
                             type="text"
                             value={searchQuery}
@@ -368,7 +378,6 @@ function OwnerManagementSection({
                             className="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-100 border-none focus:ring-2 focus:ring-primary/20 text-sm outline-none"
                         />
                     </div>
-                    {/* Status filter */}
                     <div className="relative">
                         <select
                             value={statusFilter}
@@ -379,9 +388,7 @@ function OwnerManagementSection({
                                 <option key={s}>{s}</option>
                             ))}
                         </select>
-                        <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-lg">
-                            expand_more
-                        </span>
+                        <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-lg">expand_more</span>
                     </div>
                 </div>
             </div>
@@ -393,6 +400,7 @@ function OwnerManagementSection({
                         <tr>
                             <th className="px-6 py-4 font-semibold">Owner</th>
                             <th className="px-6 py-4 font-semibold">Email</th>
+                            <th className="px-6 py-4 font-semibold">Verified</th>
                             <th className="px-6 py-4 font-semibold">Status</th>
                             <th className="px-6 py-4 font-semibold text-center">Actions</th>
                         </tr>
@@ -400,9 +408,7 @@ function OwnerManagementSection({
                     <tbody className="divide-y divide-slate-100">
                         {owners.length === 0 ? (
                             <tr>
-                                <td colSpan={4} className="px-6 py-12 text-center text-slate-500 text-sm">
-                                    No owners found
-                                </td>
+                                <td colSpan={5} className="px-6 py-12 text-center text-slate-500 text-sm">No owners found</td>
                             </tr>
                         ) : (
                             owners.map((owner) => (
@@ -420,26 +426,46 @@ function OwnerManagementSection({
                                     </td>
                                     <td className="px-6 py-4 text-sm text-slate-600">{owner.email}</td>
                                     <td className="px-6 py-4">
+                                        <div className="flex flex-col gap-1">
+                                            <span className={`inline-flex items-center gap-1 text-xs font-medium ${owner.emailVerified ? 'text-emerald-600' : 'text-slate-400'}`}>
+                                                <span className="material-symbols-outlined text-sm">{owner.emailVerified ? 'mark_email_read' : 'mail'}</span>
+                                                Email
+                                            </span>
+                                            <span className={`inline-flex items-center gap-1 text-xs font-medium ${owner.phoneVerified ? 'text-emerald-600' : 'text-slate-400'}`}>
+                                                <span className="material-symbols-outlined text-sm">{owner.phoneVerified ? 'verified' : 'phone'}</span>
+                                                Phone
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td className="px-6 py-4">
                                         <StatusBadge suspended={owner.suspended} role={owner.role} />
                                     </td>
                                     <td className="px-6 py-4">
-                                        <div className="flex items-center justify-center gap-2">
+                                        <div className="flex items-center justify-center gap-1">
                                             {owner.suspended ? (
                                                 <button
                                                     onClick={() => onReactivate(owner.id)}
-                                                    className="px-3 py-1 bg-primary/10 text-primary rounded-lg text-xs font-medium hover:bg-primary/20 transition-colors min-h-[44px] md:min-h-0"
+                                                    title="Reactivate"
+                                                    className="p-2 text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                                                 >
-                                                    Reactivate
+                                                    <span className="material-symbols-outlined text-xl">check_circle</span>
                                                 </button>
                                             ) : (
                                                 <button
                                                     onClick={() => onSuspend(owner.id)}
-                                                    className="p-2 text-slate-400 hover:text-red-500 transition-colors min-h-[44px] md:min-h-0"
                                                     title="Suspend"
+                                                    className="p-2 text-amber-500 hover:bg-amber-50 rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                                                 >
                                                     <span className="material-symbols-outlined text-xl">block</span>
                                                 </button>
                                             )}
+                                            <button
+                                                onClick={() => onDelete(owner.id, owner.displayName)}
+                                                title="Delete account"
+                                                className="p-2 text-red-400 hover:bg-red-50 rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                                            >
+                                                <span className="material-symbols-outlined text-xl">delete</span>
+                                            </button>
                                         </div>
                                     </td>
                                 </tr>
@@ -449,11 +475,8 @@ function OwnerManagementSection({
                 </table>
             </div>
 
-            {/* Footer */}
-            <div className="p-4 border-t border-slate-200 flex items-center justify-between">
-                <p className="text-xs text-slate-500">
-                    Showing {owners.length} of {totalCount} owners
-                </p>
+            <div className="p-4 border-t border-slate-200">
+                <p className="text-xs text-slate-500">Showing {owners.length} of {totalCount} owners</p>
             </div>
         </section>
     );

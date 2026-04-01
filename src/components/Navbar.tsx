@@ -95,7 +95,7 @@ const Navbar = () => {
                     {/* Mobile Hamburger */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden text-on-surface hover:text-primary transition-colors p-1"
+                        className="md:hidden text-on-surface hover:text-primary transition-colors p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
                         aria-label="Toggle menu"
                     >
                         <span className="material-symbols-outlined text-2xl">

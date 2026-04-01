@@ -9,6 +9,8 @@ export interface User {
     avatar?: string;
     suspended?: boolean;
     rewardPoints?: number;
+    emailVerified?: boolean;
+    phoneVerified?: boolean;
 }
 
 // Turf types

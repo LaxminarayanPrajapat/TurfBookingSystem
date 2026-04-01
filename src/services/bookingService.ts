@@ -7,8 +7,6 @@ import {
     doc,
     setDoc,
     updateDoc,
-    orderBy,
-    limit,
 } from 'firebase/firestore';
 import { db } from './firebase';
 import type { Booking } from '../types';

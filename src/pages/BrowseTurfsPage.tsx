@@ -24,7 +24,7 @@ const FilterChip = ({
 }) => (
     <button
         onClick={onClick}
-        className={`flex h-10 items-center justify-center gap-x-2 rounded-xl border px-4 text-sm font-medium transition-all ${active
+        className={`flex min-h-[44px] items-center justify-center gap-x-2 rounded-xl border px-4 text-sm font-medium transition-all ${active
             ? 'border-primary bg-primary/10 text-primary'
             : 'border-gray-200 bg-white text-gray-700 hover:border-primary'
             }`}
@@ -112,13 +112,13 @@ const TurfCard = ({
                 <div className="flex items-center gap-2">
                     <button
                         onClick={onViewDetails}
-                        className="text-sm font-bold px-3 py-2 rounded-lg border border-gray-200 text-gray-600 hover:border-primary hover:text-primary transition-all"
+                        className="text-sm font-bold px-3 py-2 rounded-lg border border-gray-200 text-gray-600 hover:border-primary hover:text-primary transition-all min-h-[44px]"
                     >
                         View Details
                     </button>
                     <button
                         onClick={onBookNow}
-                        className="bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all font-bold text-sm px-4 py-2 rounded-lg"
+                        className="bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all font-bold text-sm px-4 py-2 rounded-lg min-h-[44px]"
                     >
                         Book Now
                     </button>
@@ -553,20 +553,20 @@ const BrowseTurfsPage = () => {
             </main>
 
             {/* Mobile Bottom Navigation */}
-            <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-6 py-3 flex justify-between items-center z-50">
-                <Link to="/" className="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
+            <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-6 flex justify-between items-center z-50">
+                <Link to="/" className="flex flex-col items-center justify-center gap-1 text-gray-400 hover:text-primary transition-colors min-h-[56px]">
                     <span className="material-symbols-outlined">home</span>
                     <span className="text-[10px] font-bold uppercase">Home</span>
                 </Link>
-                <Link to="/browse" className="flex flex-col items-center gap-1 text-primary">
+                <Link to="/browse" className="flex flex-col items-center justify-center gap-1 text-primary min-h-[56px]">
                     <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>explore</span>
                     <span className="text-[10px] font-bold uppercase">Browse</span>
                 </Link>
-                <Link to="/my-bookings" className="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
+                <Link to="/my-bookings" className="flex flex-col items-center justify-center gap-1 text-gray-400 hover:text-primary transition-colors min-h-[56px]">
                     <span className="material-symbols-outlined">calendar_today</span>
                     <span className="text-[10px] font-bold uppercase">Bookings</span>
                 </Link>
-                <Link to="/profile" className="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
+                <Link to="/profile" className="flex flex-col items-center justify-center gap-1 text-gray-400 hover:text-primary transition-colors min-h-[56px]">
                     <span className="material-symbols-outlined">person</span>
                     <span className="text-[10px] font-bold uppercase">Profile</span>
                 </Link>

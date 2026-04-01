@@ -126,7 +126,7 @@ function BookingCard({
                         <button
                             onClick={() => onCancel(booking.id)}
                             disabled={cancelling}
-                            className="flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-bold text-red-500 border border-red-200 hover:bg-red-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-bold text-red-500 border border-red-200 hover:bg-red-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px]"
                         >
                             <span className="material-symbols-outlined text-[16px]">cancel</span>
                             Cancel
@@ -193,9 +193,9 @@ export default function MyBookingsPage() {
                 <div className="flex gap-1 bg-surface-low rounded-xl p-1 mb-6 w-fit">
                     <button
                         onClick={() => setActiveTab('upcoming')}
-                        className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${activeTab === 'upcoming'
-                                ? 'bg-white text-on-surface shadow-sm'
-                                : 'text-slate-500 hover:text-on-surface'
+                        className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all min-h-[44px] ${activeTab === 'upcoming'
+                            ? 'bg-white text-on-surface shadow-sm'
+                            : 'text-slate-500 hover:text-on-surface'
                             }`}
                     >
                         Upcoming
@@ -207,9 +207,9 @@ export default function MyBookingsPage() {
                     </button>
                     <button
                         onClick={() => setActiveTab('past')}
-                        className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${activeTab === 'past'
-                                ? 'bg-white text-on-surface shadow-sm'
-                                : 'text-slate-500 hover:text-on-surface'
+                        className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all min-h-[44px] ${activeTab === 'past'
+                            ? 'bg-white text-on-surface shadow-sm'
+                            : 'text-slate-500 hover:text-on-surface'
                             }`}
                     >
                         Past

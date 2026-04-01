@@ -87,7 +87,7 @@
   - [x] 16.2 Add `getAllUsers()` and `updateUserSuspension(uid, suspended)` to AuthService for admin operations
   - [x] 16.3 Ensure all service errors are caught in stores and set the `error` field, triggering toast notifications in pages
 
-- [ ] 17. Responsive Design Polish
-  - [ ] 17.1 Verify and fix mobile bottom navigation bars on BrowseTurfsPage and UserDashboardPage (visible below 768px)
-  - [ ] 17.2 Verify OwnerDashboardPage and AdminDashboardPage sidebars collapse to hamburger on mobile
-  - [ ] 17.3 Verify all touch targets (buttons, slots, links) have minimum height 44px on mobile viewports
+- [x] 17. Responsive Design Polish
+  - [x] 17.1 Verify and fix mobile bottom navigation bars on BrowseTurfsPage and UserDashboardPage (visible below 768px)
+  - [x] 17.2 Verify OwnerDashboardPage and AdminDashboardPage sidebars collapse to hamburger on mobile
+  - [x] 17.3 Verify all touch targets (buttons, slots, links) have minimum height 44px on mobile viewports

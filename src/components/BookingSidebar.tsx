@@ -114,7 +114,7 @@ const BookingSidebar = ({
                     onClick={onCtaClick}
                     disabled={ctaDisabled}
                     className={[
-                        'w-full py-3 rounded-full font-semibold text-sm transition-all',
+                        'w-full min-h-[44px] py-3 rounded-full font-semibold text-sm transition-all',
                         ctaDisabled
                             ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                             : 'btn-gradient hover:opacity-90 shadow-sm',

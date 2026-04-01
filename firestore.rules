@@ -1,0 +1,98 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Helpers ──────────────────────────────────────────────────────────────
+    function isAuth() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return isAuth() && request.auth.uid == uid;
+    }
+
+    function getRole() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role;
+    }
+
+    function isAdmin() {
+      return isAuth() && getRole() == 'admin';
+    }
+
+    function isTurfOwner() {
+      return isAuth() && getRole() == 'turf_owner';
+    }
+
+    function isNotSuspended() {
+      return !get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('suspended', false);
+    }
+
+    // ── users collection ─────────────────────────────────────────────────────
+    match /users/{uid} {
+      // Anyone can read their own profile; admins can read all
+      allow read: if isOwner(uid) || isAdmin();
+
+      // Users can create their own document on registration
+      allow create: if isOwner(uid)
+        && request.resource.data.role == 'user';
+
+      // Users can update their own profile (but not change role)
+      // Admins can update any user (e.g. suspend/reactivate)
+      allow update: if (isOwner(uid) && request.resource.data.role == resource.data.role)
+        || isAdmin();
+
+      allow delete: if isAdmin();
+    }
+
+    // ── turfs collection ─────────────────────────────────────────────────────
+    match /turfs/{turfId} {
+      // Anyone (even unauthenticated) can read turfs
+      allow read: if true;
+
+      // Only turf owners (not suspended) can create turfs
+      allow create: if isTurfOwner()
+        && isNotSuspended()
+        && request.resource.data.ownerId == request.auth.uid;
+
+      // Turf owner can update their own turf; admin can update any
+      allow update: if (isTurfOwner()
+          && isNotSuspended()
+          && resource.data.ownerId == request.auth.uid)
+        || isAdmin();
+
+      allow delete: if isAdmin()
+        || (isTurfOwner() && resource.data.ownerId == request.auth.uid);
+    }
+
+    // ── bookings collection ──────────────────────────────────────────────────
+    match /bookings/{bookingId} {
+      // Users can read their own bookings
+      // Turf owners can read bookings for their turfs
+      // Admins can read all
+      allow read: if isAuth() && (
+        resource.data.userId == request.auth.uid
+        || isTurfOwner()
+        || isAdmin()
+      );
+
+      // Authenticated, non-suspended users can create bookings
+      allow create: if isAuth()
+        && isNotSuspended()
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.status == 'pending';
+
+      // Users can cancel their own bookings (set status to cancelled)
+      // Turf owners can accept/reject bookings for their turfs
+      // Admins can update any booking
+      allow update: if isAuth() && (
+        (resource.data.userId == request.auth.uid
+          && request.resource.data.status == 'cancelled')
+        || isTurfOwner()
+        || isAdmin()
+      );
+
+      allow delete: if isAdmin();
+    }
+
+  }
+}
